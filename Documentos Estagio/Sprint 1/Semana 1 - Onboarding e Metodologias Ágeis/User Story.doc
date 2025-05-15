@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>[#COMPAS-1] Visualizar Pedidos Anteriores</title>
+    <meta http-equiv="Content-Type" Content="application/vnd.ms-word; charset=UTF-8">
+        <style type="text/css">
+
+.tableBorder, .grid
+{
+    background-color: #fff;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tableBorder td, .grid td
+{
+    vertical-align: top;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+.noPadding
+{
+    padding: 0 !important;
+}
+
+h3 .subText
+{
+    font-size: 60%;
+    font-weight: normal;
+}
+
+.tabLabel
+{
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-bottom:none;
+    padding: 2px;
+    display: inline;
+}
+
+td.blank
+{
+    padding: 0;
+    margin: 0;
+}
+
+.blank td
+{
+    border: none;
+}
+
+#descriptionArea
+{
+    margin: 0;
+    padding: 2px;
+    border: 1px solid #ccc;
+}
+
+hr
+{
+    border-top:1px solid #aaa;
+}
+
+hr.fullcontent
+{
+  height: 15px;
+  padding: 10px 0;
+  background: #fff url('https://douglasxara2011.atlassian.net/images/icons/hr.gif') no-repeat scroll center;
+}
+
+</style>
+
+</head>
+<body>
+
+<table class="tableBorder" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" width="100%" colspan="2" valign="top">
+                            <h3 class="formtitle">
+                        [COMPAS-1]&nbsp;<a href="https://douglasxara2011.atlassian.net/browse/COMPAS-1">Visualizar Pedidos Anteriores</a>
+            <span class="subText">
+               Criado: 21/mar/25                   &nbsp;Atualizado(a): 22/mar/25
+
+                                                    &nbsp;Resolvido: 22/mar/25
+                            </span>
+            </h3>
+        </td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Status:</b></td>
+        <td width="80%">Concluído</td>
+    </tr>
+    <tr>
+        <td width="20%"><b>Projeto:</b></td>
+        <td width="80%"><a href="https://douglasxara2011.atlassian.net/secure/BrowseProject.jspa?id=10067">TrilhaCompass</a></td>
+    </tr>
+
+        <tr>
+            <td><b>Componentes:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões afetadas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+
+        <tr>
+            <td><b>Versões corrigidas:</b></td>
+            <td>
+                            Nenhum
+                </td>
+    </tr>
+    
+    
+    </table>
+
+<br />
+<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td bgcolor="#f0f0f0" valign="top" width="20%">
+            <b>Tipo:</b>
+        </td>
+        <td bgcolor="#ffffff" valign="top"  width="30%" >
+            História
+        </td>
+
+                    <td bgcolor="#f0f0f0">
+                <b>Prioridade:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap>
+                Medium
+            </td>
+            </tr>
+    <tr>
+                        <td bgcolor="#f0f0f0" valign="top" width="20%">
+                <b>Relator:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top"  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:f85e1f1d-5b1f-44a0-a15e-76054ff97030"
+                id="word_reporter_712020:f85e1f1d-5b1f-44a0-a15e-76054ff97030"
+                href="https://douglasxara2011.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Af85e1f1d-5b1f-44a0-a15e-76054ff97030">
+                    douglas paulo Cortes
+                </a>
+
+                            </td>
+        
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Responsável:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" nowrap  width="30%" >
+                                        
+                
+        
+            <a class="user-hover" rel="712020:f85e1f1d-5b1f-44a0-a15e-76054ff97030"
+                id="word_assignee_712020:f85e1f1d-5b1f-44a0-a15e-76054ff97030"
+                href="https://douglasxara2011.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Af85e1f1d-5b1f-44a0-a15e-76054ff97030">
+                    douglas paulo Cortes
+                </a>
+
+                            </td>
+            </tr>
+    	<tr>
+		<td bgcolor="#f0f0f0" width="20%">
+			<b>Resolução:</b>
+		</td>
+		<td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                            Itens concluídos
+                    </td>
+                    <td bgcolor="#f0f0f0" width="20%">
+                <b>Votos:</b>
+            </td>
+            <td bgcolor="#ffffff" valign="top" width="30%" nowrap>
+                0
+            </td>
+        
+    </tr>
+    
+        <tr>
+        <td bgcolor="#f0f0f0" width="20%">
+            <b>Categorias:</b>
+        </td>
+        <td id="labels-10067-value" class="value" bgcolor="#ffffff" valign="top" colspan="3" nowrap>
+                            function, update                    </td>
+    </tr>
+    
+    	<tr>
+        		<td bgcolor="#f0f0f0" width="20%"><b>Estimativa de trabalho restante:</b></td>
+        <td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Tempo gasto:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+	</tr>
+    <tr>
+                <td bgcolor="#f0f0f0" width="20%"><b>Estimativa original:</b></td>
+		<td bgcolor="#ffffff" valign="top" nowrap width="80%" colspan="3">
+                            Desconhecido
+            		</td>
+    </tr>
+    
+    </table>
+
+
+
+    <br />
+
+    	<table class="grid" cellpadding="0" cellspacing="0" border="0" width="100%">
+            
+
+        
+    
+
+
+    
+                        <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Rank:</b></td>
+                <td id="customfield_10019-10067-value" class="value" bgcolor="#ffffff" width="80%">      0|i0002j:
+  </td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Team:</b></td>
+                <td id="customfield_10001-10067-value" class="value" bgcolor="#ffffff" width="80%"><div class="shorten" id="customfield_10001-field">
+    <span></span>
+</div>
+</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Sprint:</b></td>
+                <td id="customfield_10020-10067-value" class="value" bgcolor="#ffffff" width="80%">quadro Sprint 2, quadro Sprint 4</td>
+            </tr>
+                                <tr>
+                <td bgcolor="#f0f0f0" width="20%" valign="top"><b>Story point estimate:</b></td>
+                <td id="customfield_10016-10067-value" class="value" bgcolor="#ffffff" width="80%">    16
+</td>
+            </tr>
+            </table>
+
+    <br/>
+
+    <table cellpadding="2" cellspacing="0" border="0" width="100%" align="center">
+    <tr>
+        <td bgcolor="#bbbbbb" width="1%" nowrap align="center">
+            &nbsp;<font color="#ffffff"><b>Descrição</b></font>&nbsp;
+        </td>
+        <td>&nbsp;</td>
+    </tr>
+    </table>
+
+    <table cellpadding="0" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td id="descriptionArea">
+            <p>COMO cliente da loja Nexus  <br/>
+EU QUERO visualizar meus pedidos anteriores  <br/>
+PARA acompanhar o status e detalhes das minhas compras  </p>
+
+<p>📌 <b>Critérios de Aceitação:</b>  <br/>
+✅ O cliente deve estar logado no sistema da loja Nexus.  <br/>
+✅ O cliente deve ter permissão para acessar a área “Meus Pedidos”.  <br/>
+✅ O cliente deve visualizar os pedidos com status, data, produtos e valor total.  </p>
+
+<hr />
+
+<h3><a name="Cen%C3%A1rios%3A"></a>Cenários:</h3>
+
+<h3><a name="Cen%C3%A1rio1%3AVisualizarlistadepedidosanteriores"></a>Cenário 1: Visualizar lista de pedidos anteriores</h3>
+
+<p><b>Dado que</b> o cliente esteja logado no sistema da loja Nexus<br/>
+<b>E</b> possua pelo menos um pedido registrado<br/>
+<b>Quando</b> ele acessar o menu “Meus Pedidos”<br/>
+<b>Então</b> o sistema deve apresentar uma lista com todos os pedidos realizados por ele</p>
+
+<hr />
+
+<h3><a name="Cen%C3%A1rio2%3AVisualizardetalhesdeumpedidoespec%C3%ADfico"></a>Cenário 2: Visualizar detalhes de um pedido específico</h3>
+
+<p><b>Dado que</b> o cliente esteja na tela “Meus Pedidos”<br/>
+<b>Quando</b> clicar em um pedido específico<br/>
+<b>Então</b> o sistema deve apresentar as informações detalhadas do pedido, incluindo produtos, valor total e status (em andamento, enviado, entregue)</p>
+
+<hr />
+
+<h3><a name="Cen%C3%A1rio3%3AClientesempedidosrealizados"></a>Cenário 3: Cliente sem pedidos realizados</h3>
+
+<p><b>Dado que</b> o cliente esteja logado no sistema da loja Nexus<br/>
+<b>E</b> não possua nenhum pedido registrado<br/>
+<b>Quando</b> acessar o menu “Meus Pedidos”<br/>
+<b>Então</b> o sistema deve exibir a mensagem: “Você ainda não realizou nenhum pedido”</p>
+            <br/>
+        </td>
+    </tr>
+    </table>
+
+Gerado em Mon May 12 19:18:03 UTC 2025 por Maria Eduarda Martins Rodrigues usando JIRA 1001.0.0-SNAPSHOT#100283-rev:ae90960f6ce4b93d8be8d846e57df479663fa457.
+
+</body>
+</html>
