@@ -1,0 +1,3223 @@
+{
+	"info": {
+		"_postman_id": "60950c40-ce0d-4b0e-8af9-f3987685a889",
+		"name": "ServeRest",
+		"description": "**O ServeRest é uma API REST gratuita que simula uma loja virtual com intuito de servir de material de estudos de testes de API.**\n\nEssa página documenta todas as rotas e como acessá-las. Para mais detalhes do ServeRest (como executar localmente utilizando Docker ou NPM, alterar timeout de autenticação, etc) acesse [o repositório do ServeRest](https://github.com/serverest/serverest).",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "44114619",
+		"_collection_link": "https://annasantoro.postman.co/workspace/ServeRest~20ce147c-3972-4886-8968-752b0d8d18d2/collection/44114619-60950c40-ce0d-4b0e-8af9-f3987685a889?action=share&source=collection_link&creator=44114619"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "{_id}",
+					"item": [
+						{
+							"name": "Listar usuários cadastrados",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios?_id=<string>&nome=<string>&email=<string>&password=<string>&administrador=false",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "<string>"
+										},
+										{
+											"key": "nome",
+											"value": "<string>"
+										},
+										{
+											"key": "email",
+											"value": "<string>"
+										},
+										{
+											"key": "password",
+											"value": "<string>"
+										},
+										{
+											"key": "administrador",
+											"value": "false"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Lista de usuários",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/usuarios?_id=<string>&nome=<string>&email=<string>&password=<string>&administrador=false",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"usuarios"
+											],
+											"query": [
+												{
+													"key": "_id",
+													"value": "<string>"
+												},
+												{
+													"key": "nome",
+													"value": "<string>"
+												},
+												{
+													"key": "email",
+													"value": "<string>"
+												},
+												{
+													"key": "password",
+													"value": "<string>"
+												},
+												{
+													"key": "administrador",
+													"value": "false"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"quantidade\": \"<number>\",\n  \"usuarios\": [\n    {\n      \"nome\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"administrador\": \"true\",\n      \"_id\": \"<string>\"\n    },\n    {\n      \"nome\": \"<string>\",\n      \"email\": \"<string>\",\n      \"password\": \"<string>\",\n      \"administrador\": \"true\",\n      \"_id\": \"<string>\"\n    }\n  ]\n}"
+								}
+							]
+						},
+						{
+							"name": "Buscar usuário por ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": "0uxuPY0cbmQhpEz1",
+											"description": "(Required) ID do usuário"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Usuário encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/usuarios/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"usuarios",
+												""
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "x-cloud-trace-context",
+											"value": "281d460b58ec011c7fdb177b77ea105c;o=1"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 09 May 2025 16:07:46 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Google Frontend"
+										},
+										{
+											"key": "Content-Length",
+											"value": "49370"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"quantidade\": 225,\n    \"usuarios\": [\n        {\n            \"nome\": \"Usuário Atualizado\",\n            \"email\": \"1Baylee10@gmail.com\",\n            \"password\": \"novaSenha123\",\n            \"administrador\": \"true\",\n            \"_id\": \"07XMhg9vBTeNzMqn\"\n        },\n        {\n            \"nome\": \"Linda\",\n            \"email\": \"Natasha_Carroll-Moen@hotmail.com\",\n            \"password\": \"LFVVCM0Ut7ocAGy\",\n            \"administrador\": \"false\",\n            \"_id\": \"0FK8QC0bVCBiWygP\"\n        },\n        {\n            \"nome\": \"Fulano da Silva\",\n            \"email\": \"fulano@qa.com\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"0uxuPY0cbmQhpEz1\"\n        },\n        {\n            \"nome\": \"Matt Yost Sr.\",\n            \"email\": \"Duane44@yahoo.com\",\n            \"password\": \"bsgmxY4ntJEJm8h\",\n            \"administrador\": \"false\",\n            \"_id\": \"17bu79xVLjhtlYCt\"\n        },\n        {\n            \"nome\": \"Lari Silva\",\n            \"email\": \"lari3@qa.com.br\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"1OcUbkIi2rDLF7T5\"\n        },\n        {\n            \"nome\": \"Fulano da Silva\",\n            \"email\": \"thais@yahoo.com.br\",\n            \"password\": \"xxx\",\n            \"administrador\": \"true\",\n            \"_id\": \"1gODwELchaq7fOIv\"\n        },\n        {\n            \"nome\": \"Anastacio\",\n            \"email\": \"Russel_Morar@yahoo.com\",\n            \"password\": \"dWveI46Pau1KpKJ\",\n            \"administrador\": \"false\",\n            \"_id\": \"2G9GaacqEReQgB1A\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"y5cravn2@yahoo.com\",\n            \"password\": \"xxx\",\n            \"administrador\": \"false\",\n            \"_id\": \"2bCr91ggnLvlbw18\"\n        },\n        {\n            \"nome\": \"Dorothea\",\n            \"email\": \"Liana85@gmail.com\",\n            \"password\": \"k3nN1sa4cV3fIp7\",\n            \"administrador\": \"false\",\n            \"_id\": \"2ew15OS5mLthrl8r\"\n        },\n        {\n            \"nome\": \"Ms. Doreen Lesch\",\n            \"email\": \"Ansley76@hotmail.com\",\n            \"password\": \"JYBQ1jjdy3UNAYV\",\n            \"administrador\": \"true\",\n            \"_id\": \"2ss6WGHE2ptiRTN4\"\n        },\n        {\n            \"nome\": \"Reina\",\n            \"email\": \"Isabell0@gmail.com\",\n            \"password\": \"1qixV8ROmtJYPhr\",\n            \"administrador\": \"true\",\n            \"_id\": \"2y7zZzFYYg5I1Up1\"\n        },\n        {\n            \"nome\": \"Jules\",\n            \"email\": \"Devante.Blick@gmail.com\",\n            \"password\": \"Vr3Zh1Y5WmTh0UG\",\n            \"administrador\": \"true\",\n            \"_id\": \"3HxDDWANGtDKWKyx\"\n        },\n        {\n            \"nome\": \"Calista\",\n            \"email\": \"Toni19@gmail.com\",\n            \"password\": \"Y9XToRvF7WHuobX\",\n            \"administrador\": \"true\",\n            \"_id\": \"3SYzrbwqwp2kdKsT\"\n        },\n        {\n            \"nome\": \"Usuário Teste 1746793700308\",\n            \"email\": \"usuario1746793700308@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"3XYhwZEKt6ypXFsF\"\n        },\n        {\n            \"nome\": \"Theron\",\n            \"email\": \"Beth96@gmail.com\",\n            \"password\": \"jbh3wpad1w2Krmp\",\n            \"administrador\": \"false\",\n            \"_id\": \"3fIcPG4F1hM4tCVC\"\n        },\n        {\n            \"nome\": \"Novo Nome\",\n            \"email\": \"Lizzie_Davis47@example.com\",\n            \"password\": \"novaSenha123\",\n            \"administrador\": \"false\",\n            \"_id\": \"44djBuNoclCbcuvP\"\n        },\n        {\n            \"nome\": \"Mr. Guy Renner\",\n            \"email\": \"Darwin_Friesen32@gmail.com\",\n            \"password\": \"J3ocAvXdHGzCxuP\",\n            \"administrador\": \"false\",\n            \"_id\": \"4CTAEexPiWXShd9y\"\n        },\n        {\n            \"nome\": \"Corine\",\n            \"email\": \"murray.nicolas@yahoo.com\",\n            \"password\": \"q1kj9t115tm\",\n            \"administrador\": \"true\",\n            \"_id\": \"4OENvJ8yVxzcRb0w\"\n        },\n        {\n            \"nome\": \"Jerome\",\n            \"email\": \"Scarlett_Wolff@hotmail.com\",\n            \"password\": \"jFo2w3NuCbhpSMe\",\n            \"administrador\": \"false\",\n            \"_id\": \"4hqVaaT6cmP5gVpc\"\n        },\n        {\n            \"nome\": \"Alyssa Kris Sr.\",\n            \"email\": \"Cory_Klocko13@yahoo.com\",\n            \"password\": \"jjULh0kx9jyjPhN\",\n            \"administrador\": \"false\",\n            \"_id\": \"4knhkVkynJdGDe7V\"\n        },\n        {\n            \"nome\": \"Maria Alves\",\n            \"email\": \"Dameon_Mohr@example.com\",\n            \"password\": \"senha123\",\n            \"administrador\": \"true\",\n            \"_id\": \"4yvTm74b3SqihMrv\"\n        },\n        {\n            \"nome\": \"Ada.Welch\",\n            \"email\": \"Clara87@hotmail.com\",\n            \"password\": \"675012154\",\n            \"administrador\": \"true\",\n            \"_id\": \"5K8L58q4BplfoOyI\"\n        },\n        {\n            \"nome\": \"Gene Marquardt\",\n            \"email\": \"Enrique2@yahoo.com\",\n            \"password\": \"rkwumsMIpeR6KJB\",\n            \"administrador\": \"false\",\n            \"_id\": \"6FDmxOswJUb89sOZ\"\n        },\n        {\n            \"nome\": \"Maria Teste\",\n            \"email\": \"maria1746788367395@teste.com\",\n            \"password\": \"senha321\",\n            \"administrador\": \"false\",\n            \"_id\": \"6QaJwPLJakogfnfg\"\n        },\n        {\n            \"nome\": \"Trace\",\n            \"email\": \"Destinee.Reilly22@yahoo.com\",\n            \"password\": \"bTJehzGjWCR56k2\",\n            \"administrador\": \"true\",\n            \"_id\": \"6hE84co2FFu2dQ0p\"\n        },\n        {\n            \"nome\": \"Alphonso\",\n            \"email\": \"Holden_Cummings40@hotmail.com\",\n            \"password\": \"KyMZ8WY7keESOEV\",\n            \"administrador\": \"true\",\n            \"_id\": \"7FPsdfXEULfECDnc\"\n        },\n        {\n            \"nome\": \"Teste QA\",\n            \"email\": \"testeqa1@exemplo.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"7KAmv9yOmP4gxrLQ\"\n        },\n        {\n            \"nome\": \"Stephanie\",\n            \"email\": \"Gerson_McClure64@gmail.com\",\n            \"password\": \"6PL0R5KlXawRhsl\",\n            \"administrador\": \"true\",\n            \"_id\": \"8951bt1jtnsZic8O\"\n        },\n        {\n            \"nome\": \"Gisele\",\n            \"email\": \"giselecsa@gmail.com\",\n            \"password\": \"PDI2025\",\n            \"administrador\": \"true\",\n            \"_id\": \"8Kzl5VDiwWh4dHeS\"\n        },\n        {\n            \"nome\": \"Grady Simonis\",\n            \"email\": \"gradysimonis@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"true\",\n            \"_id\": \"8L2xjaOTWdmEZie6\"\n        },\n        {\n            \"nome\": \"Richard\",\n            \"email\": \"Alfred_Pouros@gmail.com\",\n            \"password\": \"HX9QWpG3cZGlvcj\",\n            \"administrador\": \"true\",\n            \"_id\": \"9mtjkhKsfqOnAjey\"\n        },\n        {\n            \"nome\": \"Luella\",\n            \"email\": \"Una_Gusikowski@gmail.com\",\n            \"password\": \"wRAXBTaQYJ2XqFV\",\n            \"administrador\": \"false\",\n            \"_id\": \"9uqqmrNQbASPIXwx\"\n        },\n        {\n            \"nome\": \"Maria Usuária 1746793690194\",\n            \"email\": \"maria1746793690194@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"false\",\n            \"_id\": \"AaXIuJ2pkTzZkeTE\"\n        },\n        {\n            \"nome\": \"Antonia Hand\",\n            \"email\": \"Donald14@gmail.com\",\n            \"password\": \"EYFqXqWqv9H3Drb\",\n            \"administrador\": \"true\",\n            \"_id\": \"AasG4Sc2FMutURlv\"\n        },\n        {\n            \"nome\": \"Heidi76\",\n            \"email\": \"Mose91@yahoo.com\",\n            \"password\": \"172309614\",\n            \"administrador\": \"true\",\n            \"_id\": \"AxmTec5ZByl5Pmre\"\n        },\n        {\n            \"nome\": \"Wilma Pfannerstill\",\n            \"email\": \"wilmapfannerstill@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"false\",\n            \"_id\": \"C8ClwjKpoJj3uG8t\"\n        },\n        {\n            \"nome\": \"Maria Alves\",\n            \"email\": \"Dorthy.Davis66@example.com\",\n            \"password\": \"senha123\",\n            \"administrador\": \"true\",\n            \"_id\": \"CmXEHqQaprwIijBL\"\n        },\n        {\n            \"nome\": \"Loyce\",\n            \"email\": \"Boyd15@hotmail.com\",\n            \"password\": \"P_tvyDLQ4sSOgOA\",\n            \"administrador\": \"false\",\n            \"_id\": \"D1owGwyogi3TjPK5\"\n        },\n        {\n            \"nome\": \"Mr. Jeffrey Kiehn\",\n            \"email\": \"Demarcus_Pfeffer51@yahoo.com\",\n            \"password\": \"tVWc9PsbLPefCFs\",\n            \"administrador\": \"true\",\n            \"_id\": \"DFfIVSCNASc86szt\"\n        },\n        {\n            \"nome\": \"Sofia\",\n            \"email\": \"Mckayla64@gmail.com\",\n            \"password\": \"9VUoR_NlHx5t6b1\",\n            \"administrador\": \"false\",\n            \"_id\": \"DJGYlAH2da6MDVYS\"\n        },\n        {\n            \"nome\": \"Arch_Bergstrom\",\n            \"email\": \"Gus.Champlin3@hotmail.com\",\n            \"password\": \"696296303\",\n            \"administrador\": \"true\",\n            \"_id\": \"DZlgXVwPdn9OyuOR\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"ku45z42o@yahoo.com\",\n            \"password\": \"xxx\",\n            \"administrador\": \"false\",\n            \"_id\": \"E9v6pvfN1H8e0iIW\"\n        },\n        {\n            \"nome\": \"Amaya\",\n            \"email\": \"Bud_Kuphal20@yahoo.com\",\n            \"password\": \"i5UUMdsAeEYsfM2\",\n            \"administrador\": \"false\",\n            \"_id\": \"EkhaNdTW1tOnuAx6\"\n        },\n        {\n            \"nome\": \"Sidney_OReilly\",\n            \"email\": \"Gerson.Bogan-Towne@hotmail.com\",\n            \"password\": \"576926149\",\n            \"administrador\": \"true\",\n            \"_id\": \"EqWlkFkVpiMpkakq\"\n        },\n        {\n            \"nome\": \"Marilou\",\n            \"email\": \"Yesenia.Cormier5@hotmail.com\",\n            \"password\": \"kuwjPqCfXy8UKIf\",\n            \"administrador\": \"false\",\n            \"_id\": \"ErpE8icVPPedYcRQ\"\n        },\n        {\n            \"nome\": \"Obie\",\n            \"email\": \"Chelsie26@gmail.com\",\n            \"password\": \"dUg8I58bFWwuBOy\",\n            \"administrador\": \"false\",\n            \"_id\": \"F0IEQcWU6wKtWjwj\"\n        },\n        {\n            \"nome\": \"João Silva\",\n            \"email\": \"joao@valido.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"F0J9QetNeST8YEgL\"\n        },\n        {\n            \"nome\": \"Brenda Stracke\",\n            \"email\": \"Kathryn45@hotmail.com\",\n            \"password\": \"uaFOsOOJgCELs7f\",\n            \"administrador\": \"true\",\n            \"_id\": \"FRi0kGUx9FAgQ9VB\"\n        },\n        {\n            \"nome\": \"Guy Heaney\",\n            \"email\": \"Efren_Schneider91@yahoo.com\",\n            \"password\": \"knTwgo8fZGeiTiw\",\n            \"administrador\": \"true\",\n            \"_id\": \"Fb1ckj9JCrAMSJ8j\"\n        },\n        {\n            \"nome\": \"Usuário Teste 1746787808076\",\n            \"email\": \"usuario1746787808076@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"Fuym9kAHhZ9k2KFj\"\n        },\n        {\n            \"nome\": \"Kathlyn\",\n            \"email\": \"Heather_Kerluke@gmail.com\",\n            \"password\": \"eoGp01G23jfQB2C\",\n            \"administrador\": \"true\",\n            \"_id\": \"GBKRV0HeYKdWV6Tm\"\n        },\n        {\n            \"nome\": \"Geraldine\",\n            \"email\": \"Rosalia.Carter@gmail.com\",\n            \"password\": \"hxkuj4hjUiQadEC\",\n            \"administrador\": \"true\",\n            \"_id\": \"GQtohzXSYMvzI8SQ\"\n        },\n        {\n            \"nome\": \"Faby Oak\",\n            \"email\": \"fabioak@yahoo.com.br\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"GdyV0swGu2zyKrc1\"\n        },\n        {\n            \"nome\": \"Kim O'Kon I\",\n            \"email\": \"Jasmin14@hotmail.com\",\n            \"password\": \"wTenrz8o1ixU1BA\",\n            \"administrador\": \"true\",\n            \"_id\": \"GicGdC85Ati4np4U\"\n        },\n        {\n            \"nome\": \"Etha\",\n            \"email\": \"Wilber.Aufderhar@yahoo.com\",\n            \"password\": \"VN9ssbP55GwG7nT\",\n            \"administrador\": \"false\",\n            \"_id\": \"GiyLOB0BIeljx9m4\"\n        },\n        {\n            \"nome\": \"Luis Mertz\",\n            \"email\": \"Katherine.Cormier@hotmail.com\",\n            \"password\": \"qv7uFtWNtgaANBp\",\n            \"administrador\": \"true\",\n            \"_id\": \"H49IBv8BLcRp5CVD\"\n        },\n        {\n            \"nome\": \"Reed\",\n            \"email\": \"Leatha.Nikolaus@hotmail.com\",\n            \"password\": \"nZOkF763mMroWt9\",\n            \"administrador\": \"false\",\n            \"_id\": \"H53n5Xz0YmKTZPJo\"\n        },\n        {\n            \"nome\": \"Inexistente\",\n            \"email\": \"inexistente@qa.com\",\n            \"password\": \"123\",\n            \"administrador\": \"false\",\n            \"_id\": \"HghsOZ6mtoblxglW\"\n        },\n        {\n            \"nome\": \"User28\",\n            \"email\": \"caracteresinválidos@test.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"Hj1JPqACpgnl6F43\"\n        },\n        {\n            \"nome\": \"Carolina Hoewell\",\n            \"email\": \"cshoewell@gmail.com\",\n            \"password\": \"123456789\",\n            \"administrador\": \"true\",\n            \"_id\": \"ITLn3qaOHNVB3hq7\"\n        },\n        {\n            \"nome\": \"Jimmie\",\n            \"email\": \"williamblanda@qa.com.br\",\n            \"password\": \"t8Rxgihz5t\",\n            \"administrador\": \"true\",\n            \"_id\": \"IhNsdTTXbDWxUrR3\"\n        },\n        {\n            \"nome\": \"Trystan\",\n            \"email\": \"Judson_Wisoky54@gmail.com\",\n            \"password\": \"HX94WxoVnphU9_s\",\n            \"administrador\": \"true\",\n            \"_id\": \"JCQK1r08uKBNjHkI\"\n        },\n        {\n            \"nome\": \"Elias\",\n            \"email\": \"Leanna55@hotmail.com\",\n            \"password\": \"CKXQ2Dknn7YP0S8\",\n            \"administrador\": \"false\",\n            \"_id\": \"JD9kqUzpLs7KpVNP\"\n        },\n        {\n            \"nome\": \"Eliseo\",\n            \"email\": \"Amalia_Wolff-VonRueden1@hotmail.com\",\n            \"password\": \"afZSZf8lsAK_0pO\",\n            \"administrador\": \"false\",\n            \"_id\": \"JP1FkCpNbPME1bKU\"\n        },\n        {\n            \"nome\": \"Waldo\",\n            \"email\": \"Name.OConner@gmail.com\",\n            \"password\": \"jp9BwpaplJjgQwW\",\n            \"administrador\": \"false\",\n            \"_id\": \"K2lfSh3ezVu1dQgM\"\n        },\n        {\n            \"nome\": \"João dos Santos\",\n            \"email\": \"joão48@qa.com.br\",\n            \"password\": \"senha48\",\n            \"administrador\": \"true\",\n            \"_id\": \"KhJreltFLqPEdAnC\"\n        },\n        {\n            \"nome\": \"João Silva\",\n            \"email\": \"joao@hotmail.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"KukQcml4TIxMI6zh\"\n        },\n        {\n            \"nome\": \"Gloria\",\n            \"email\": \"Leonora.Rippin@yahoo.com\",\n            \"password\": \"nVTZIvCieSTPw5r\",\n            \"administrador\": \"true\",\n            \"_id\": \"KwzkMeDf48IogKEM\"\n        },\n        {\n            \"nome\": \"Deborah Mante\",\n            \"email\": \"Linnie.Treutel60@hotmail.com\",\n            \"password\": \"E6DKIbIOxSXs2cw\",\n            \"administrador\": \"false\",\n            \"_id\": \"LLFTnxEa6cYg3mo2\"\n        },\n        {\n            \"nome\": \"Charlotte\",\n            \"email\": \"Garth_Borer17@gmail.com\",\n            \"password\": \"Am0h9PgqxkawOdZ\",\n            \"administrador\": \"true\",\n            \"_id\": \"LMsqRtiwi4SA5t1b\"\n        },\n        {\n            \"nome\": \"Santiago Collier\",\n            \"email\": \"santiagocollier@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"true\",\n            \"_id\": \"LRmybwxPxgRgRiJZ\"\n        },\n        {\n            \"nome\": \"LAri Silva\",\n            \"email\": \"lari5@qa.com.br\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"LVtFghhDcKMQd91w\"\n        },\n        {\n            \"nome\": \"Elmer\",\n            \"email\": \"Jermey.Wehner20@gmail.com\",\n            \"password\": \"BVGNjv1_sp8p54b\",\n            \"administrador\": \"true\",\n            \"_id\": \"LYyk20pZGShSShVv\"\n        },\n        {\n            \"nome\": \"Login Incorreto\",\n            \"email\": \"valido1746787812691@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"NjpfEOhqUptq3kRt\"\n        },\n        {\n            \"nome\": \"Maymie\",\n            \"email\": \"Brandt_Rowe59@gmail.com\",\n            \"password\": \"ZEAA0vXdVgc0XSe\",\n            \"administrador\": \"true\",\n            \"_id\": \"NzTsM0EU1hZ5T9b6\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"teste_whrdzv@qa.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"PoWadqDQA55pI7YQ\"\n        },\n        {\n            \"nome\": \"Tyrone Aufderhar\",\n            \"email\": \"tyroneaufderhar@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"false\",\n            \"_id\": \"PwKpNUea3gcsfxyo\"\n        },\n        {\n            \"nome\": \"Joanie\",\n            \"email\": \"Keeley27@hotmail.com\",\n            \"password\": \"ncniO8oslmdF04v\",\n            \"administrador\": \"false\",\n            \"_id\": \"QcvoeG9nGkbhl1nz\"\n        },\n        {\n            \"nome\": \"Tia\",\n            \"email\": \"Jake_Funk79@hotmail.com\",\n            \"password\": \"oRe9pRnXh3taXyh\",\n            \"administrador\": \"true\",\n            \"_id\": \"QiuLZPBMH7IRIpuh\"\n        },\n        {\n            \"nome\": \"João Admin 1746788338594\",\n            \"email\": \"joao.admin1746788338594@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"R4cQ2iiaAB7qdWS2\"\n        },\n        {\n            \"nome\": \"Jessie Zboncak\",\n            \"email\": \"Craig.Schmidt87@yahoo.com\",\n            \"password\": \"toNvyVpOoPUoQkO\",\n            \"administrador\": \"false\",\n            \"_id\": \"RQ37dIgauk6efFgs\"\n        },\n        {\n            \"nome\": \"Carlos Buscador\",\n            \"email\": \"carlos1746793712547@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"RkLKg10VJ1kTL3in\"\n        },\n        {\n            \"nome\": \"Maria Usuária 1746787792941\",\n            \"email\": \"maria1746787792941@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"false\",\n            \"_id\": \"RoDSxSKZp0osZ5nj\"\n        },\n        {\n            \"nome\": \"Oscar\",\n            \"email\": \"Gregg_Nitzsche@yahoo.com\",\n            \"password\": \"vxogNI8crkCfYWr\",\n            \"administrador\": \"true\",\n            \"_id\": \"RscsJrdb3AYeSCp3\"\n        },\n        {\n            \"nome\": \"Alexandra\",\n            \"email\": \"Wilma_Lynch47@yahoo.com\",\n            \"password\": \"N4i03gJwLGcwxqj\",\n            \"administrador\": \"true\",\n            \"_id\": \"S2Cku1GcEJctZ90S\"\n        },\n        {\n            \"nome\": \"Brian McClure\",\n            \"email\": \"Mose81@yahoo.com\",\n            \"password\": \"pxbI2keAGmHTnfh\",\n            \"administrador\": \"false\",\n            \"_id\": \"S3adpVh1Ag7pnRGs\"\n        },\n        {\n            \"nome\": \"João Admin 1746793685107\",\n            \"email\": \"joao.admin1746793685107@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"SH25Fw8G5DZGp8S0\"\n        },\n        {\n            \"nome\": \"Alisha\",\n            \"email\": \"Conrad_Christiansen@yahoo.com\",\n            \"password\": \"FgC4v5HjbH6dYGB\",\n            \"administrador\": \"false\",\n            \"_id\": \"STvPeUiWPbqc2YXG\"\n        },\n        {\n            \"nome\": \"Liana\",\n            \"email\": \"Dayne_Wiegand6@hotmail.com\",\n            \"password\": \"teltogIGH_IwgLw\",\n            \"administrador\": \"true\",\n            \"_id\": \"SapWsi0hyLjatFef\"\n        },\n        {\n            \"nome\": \"Rylan\",\n            \"email\": \"Vilma92@yahoo.com\",\n            \"password\": \"E2IOdVA1rcfUUhJ\",\n            \"administrador\": \"true\",\n            \"_id\": \"Sc1Pokq0oVOg3cEi\"\n        },\n        {\n            \"nome\": \"Carlos Buscador\",\n            \"email\": \"carlos1746800591732@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"T7FK6lQIMrHWnAPQ\"\n        },\n        {\n            \"nome\": \"Rickey\",\n            \"email\": \"Ebony48@hotmail.com\",\n            \"password\": \"FX65U5L_sOxNoU5\",\n            \"administrador\": \"false\",\n            \"_id\": \"TESTjiMxHsvo5kWE\"\n        },\n        {\n            \"nome\": \"Marion\",\n            \"email\": \"Emily54@gmail.com\",\n            \"password\": \"ZT4gFH7on1fmVQh\",\n            \"administrador\": \"true\",\n            \"_id\": \"ULWOMalLsE8LkmMs\"\n        },\n        {\n            \"nome\": \"Usuário Teste 1746788353577\",\n            \"email\": \"usuario1746788353577@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"Uycj9QZx0rLRgebh\"\n        },\n        {\n            \"nome\": \"Fulano da Silva\",\n            \"email\": \"beltrano02@qa.com.br\",\n            \"password\": \"teste\",\n            \"administrador\": \"true\",\n            \"_id\": \"V29ajWUvJIA8myay\"\n        },\n        {\n            \"nome\": \"Leticia Mertz DDS\",\n            \"email\": \"Robb95@yahoo.com\",\n            \"password\": \"bAxqaidvBxRknxV\",\n            \"administrador\": \"true\",\n            \"_id\": \"VgODkA6g6zTOi9w7\"\n        },\n        {\n            \"nome\": \"Rene McClure\",\n            \"email\": \"Lukas95@yahoo.com\",\n            \"password\": \"ZDu7ihb14Z3bNsV\",\n            \"administrador\": \"false\",\n            \"_id\": \"Vr98rkdN1sYTEyHj\"\n        },\n        {\n            \"nome\": \"Otis Bayer\",\n            \"email\": \"Rahsaan_Ziemann52@yahoo.com\",\n            \"password\": \"FYg_H7AmDnKWNhw\",\n            \"administrador\": \"true\",\n            \"_id\": \"W5IJhFgkmGeL8oxR\"\n        },\n        {\n            \"nome\": \"Jared\",\n            \"email\": \"Nadia_Hudson@yahoo.com\",\n            \"password\": \"RG0eYkCZLCevfph\",\n            \"administrador\": \"false\",\n            \"_id\": \"W5zigPF2LdlzS3s9\"\n        },\n        {\n            \"nome\": \"Leo Harber\",\n            \"email\": \"leoharber@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"true\",\n            \"_id\": \"WCi6QOlUjAVeQ9JZ\"\n        },\n        {\n            \"nome\": \"Ally\",\n            \"email\": \"Geovany.Shields66@gmail.com\",\n            \"password\": \"D4eXhjpS91jkkCU\",\n            \"administrador\": \"true\",\n            \"_id\": \"WVcJPdS24v8Z74j3\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"5ddic6zz@yahoo.com\",\n            \"password\": \"xxx\",\n            \"administrador\": \"false\",\n            \"_id\": \"Wdw1vmZjR81AqFfL\"\n        },\n        {\n            \"nome\": \"Maria Usuária 1746800569318\",\n            \"email\": \"maria1746800569318@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"false\",\n            \"_id\": \"WoZisT3N9Ampqesh\"\n        },\n        {\n            \"nome\": \"Horacio\",\n            \"email\": \"Aileen_Wolff82@gmail.com\",\n            \"password\": \"318kKDSB6GcIyil\",\n            \"administrador\": \"true\",\n            \"_id\": \"XFh347qxKTjkR6Si\"\n        },\n        {\n            \"nome\": \"Sue Waters III\",\n            \"email\": \"karlmetz@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"true\",\n            \"_id\": \"XVTualNtC5QHwEMR\"\n        },\n        {\n            \"nome\": \"Novo Nome\",\n            \"email\": \"Shayna.Blanda78@example.org\",\n            \"password\": \"novaSenha123\",\n            \"administrador\": \"false\",\n            \"_id\": \"XeKHTyfmevd0xsaO\"\n        },\n        {\n            \"nome\": \"Connie\",\n            \"email\": \"Amber_Lind79@yahoo.com\",\n            \"password\": \"GqOtFgZ5PF0Z53W\",\n            \"administrador\": \"false\",\n            \"_id\": \"XeO6ixhRBk0t2hvp\"\n        },\n        {\n            \"nome\": \"Jayde\",\n            \"email\": \"Nathaniel54@gmail.com\",\n            \"password\": \"uPLQFqSp4nrZbRu\",\n            \"administrador\": \"false\",\n            \"_id\": \"XqH25PG6VnZut3cv\"\n        },\n        {\n            \"nome\": \"Damaris.Stokes41\",\n            \"email\": \"Jeanne86@hotmail.com\",\n            \"password\": \"733369046\",\n            \"administrador\": \"true\",\n            \"_id\": \"Y2Vh2oSlqehLuQUf\"\n        },\n        {\n            \"nome\": \"Westley\",\n            \"email\": \"Winifred87@yahoo.com\",\n            \"password\": \"ij0QI3XJ0FbuG9_\",\n            \"administrador\": \"true\",\n            \"_id\": \"YB83xU2JE249Jrda\"\n        },\n        {\n            \"nome\": \"João Silva\",\n            \"email\": \"jojo@valido.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"YLbiWHzBxnL0QVR5\"\n        },\n        {\n            \"nome\": \"Usuário Existente\",\n            \"email\": \"celiolopescarvalho@gmail.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"false\",\n            \"_id\": \"YP4k7QwgdNSV3xrl\"\n        },\n        {\n            \"nome\": \"Falha Esperada\",\n            \"email\": \"falha1746788372086@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"Zg5DJXVph4ZwX6PR\"\n        },\n        {\n            \"nome\": \"Alton Streich\",\n            \"email\": \"Macie78@hotmail.com\",\n            \"password\": \"vzaApS5nWJWPfwR\",\n            \"administrador\": \"true\",\n            \"_id\": \"Zg6eCdvZO0NHSvK8\"\n        },\n        {\n            \"nome\": \"João Silva\",\n            \"email\": \"joao@valid.com\",\n            \"password\": \"123\",\n            \"administrador\": \"true\",\n            \"_id\": \"ZzFReg2hTlWjzYp6\"\n        },\n        {\n            \"nome\": \"Skylar37\",\n            \"email\": \"Dessie11@hotmail.com\",\n            \"password\": \"196342320\",\n            \"administrador\": \"true\",\n            \"_id\": \"aN8xFyOXXzShgXJO\"\n        },\n        {\n            \"nome\": \"Lilyan\",\n            \"email\": \"Meda.Wiegand@hotmail.com\",\n            \"password\": \"bI0s_UN6HP2HGvd\",\n            \"administrador\": \"true\",\n            \"_id\": \"aUnkDxKgj4M4FaN9\"\n        },\n        {\n            \"nome\": \"Michel\",\n            \"email\": \"Shaniya_Rogahn6@gmail.com\",\n            \"password\": \"Ve6mtJofAUeFfjt\",\n            \"administrador\": \"false\",\n            \"_id\": \"aYf3i1mXGl8Knxyt\"\n        },\n        {\n            \"nome\": \"Hannah\",\n            \"email\": \"Norris_Yundt77@gmail.com\",\n            \"password\": \"w1JNsJiXBD8wdJN\",\n            \"administrador\": \"true\",\n            \"_id\": \"ahTQOMN3R7czXjXQ\"\n        },\n        {\n            \"nome\": \"Orpha\",\n            \"email\": \"Grayce5@gmail.com\",\n            \"password\": \"gG5A3UaizkAz75d\",\n            \"administrador\": \"false\",\n            \"_id\": \"aopBB4Qh94Onn0jF\"\n        },\n        {\n            \"nome\": \"Marcos Atualizado\",\n            \"email\": \"user+1746798113289@example.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"b995eq2dG0p25O4s\"\n        },\n        {\n            \"nome\": \"Joshua\",\n            \"email\": \"Stan_Swift@gmail.com\",\n            \"password\": \"mY3SZHH6QzPQcxy\",\n            \"administrador\": \"false\",\n            \"_id\": \"bFQdGRrNxZIiKyfQ\"\n        },\n        {\n            \"nome\": \"Usu\\ufffdrio de Teste\",\n            \"email\": \"isaquemoura@example.net\",\n            \"password\": \" _yj&7KnwD5\",\n            \"administrador\": \"true\",\n            \"_id\": \"bPLb3VwdR5KkDVUX\"\n        },\n        {\n            \"nome\": \"Stewart\",\n            \"email\": \"Art_Crona40@gmail.com\",\n            \"password\": \"wPiCjGOydJx2EWa\",\n            \"administrador\": \"true\",\n            \"_id\": \"ce0F0PWR0awJ4JcS\"\n        },\n        {\n            \"nome\": \"Jovani\",\n            \"email\": \"Candido35@gmail.com\",\n            \"password\": \"jdAC6k8WcvCGHc8\",\n            \"administrador\": \"true\",\n            \"_id\": \"d1aJ1IwZfOYFlWij\"\n        },\n        {\n            \"nome\": \"Sonya\",\n            \"email\": \"Will.Crist3@yahoo.com\",\n            \"password\": \"Tos2_7PLqh3LGpX\",\n            \"administrador\": \"true\",\n            \"_id\": \"dEmHL7ILbFR3TGjW\"\n        },\n        {\n            \"nome\": \"Maria Teste\",\n            \"email\": \"maria1746793714922@teste.com\",\n            \"password\": \"senha321\",\n            \"administrador\": \"false\",\n            \"_id\": \"dTLPiQIMNelg0dah\"\n        },\n        {\n            \"nome\": \"Telly\",\n            \"email\": \"Ladarius.Bahringer46@hotmail.com\",\n            \"password\": \"sBGZ9B1UTSUgOR6\",\n            \"administrador\": \"true\",\n            \"_id\": \"dTl3yEGEryywAJBR\"\n        },\n        {\n            \"nome\": \"Ricky48\",\n            \"email\": \"Weldon31@yahoo.com\",\n            \"password\": \"644656907\",\n            \"administrador\": \"true\",\n            \"_id\": \"e1SfDNNsIqDBDyjw\"\n        },\n        {\n            \"nome\": \"Sra. Emilly Pires\",\n            \"email\": \"vargasravy@example.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"e40AvpdhmAqoSU1i\"\n        },\n        {\n            \"nome\": \"Miss Stacey Ullrich II\",\n            \"email\": \"Itzel.Baumbach20@gmail.com\",\n            \"password\": \"ZdtCNe5R150NmBV\",\n            \"administrador\": \"true\",\n            \"_id\": \"fCPC9Ewqh87su6mv\"\n        },\n        {\n            \"nome\": \"LAri Silva\",\n            \"email\": \"lari474663r88@123.com\",\n            \"password\": \"123459\",\n            \"administrador\": \"true\",\n            \"_id\": \"fGRDUs3Vh6RlIUHH\"\n        },\n        {\n            \"nome\": \"Merrill\",\n            \"email\": \"star.mertz@gmail.com\",\n            \"password\": \"xfv3pa64vak9gd3\",\n            \"administrador\": \"true\",\n            \"_id\": \"fousK01uUE25jHEu\"\n        },\n        {\n            \"nome\": \"Carlos Buscador\",\n            \"email\": \"carlos1746787820496@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"g0PZpljSBZ1UNrLQ\"\n        },\n        {\n            \"nome\": \"Falha Esperada\",\n            \"email\": \"falha1746787827441@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"gK28dOl1J35kx25Y\"\n        },\n        {\n            \"nome\": \"Webster\",\n            \"email\": \"Federico.Cormier@yahoo.com\",\n            \"password\": \"xjsy4WoN5uSYbgk\",\n            \"administrador\": \"false\",\n            \"_id\": \"gMEf6RvkwkCd5NPV\"\n        },\n        {\n            \"nome\": \"Vitor Carrasco\",\n            \"email\": \"vitorfcarrasco@gmail.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"gi7QY7Ob15lkZ2Ub\"\n        },\n        {\n            \"nome\": \"Gideon\",\n            \"email\": \"Loraine_Cole@hotmail.com\",\n            \"password\": \"uGJHIUh5NJyJrTf\",\n            \"administrador\": \"false\",\n            \"_id\": \"go4dZjgggV0lkOHK\"\n        },\n        {\n            \"nome\": \"Maria Alves\",\n            \"email\": \"marcosatualizado@email.com\",\n            \"password\": \"12345\",\n            \"administrador\": \"true\",\n            \"_id\": \"h0aTuASqTVYYDqY7\"\n        },\n        {\n            \"nome\": \"Elisa\",\n            \"email\": \"Cordell.Donnelly-Beahan@yahoo.com\",\n            \"password\": \"RypPL1rJSfsMlyj\",\n            \"administrador\": \"true\",\n            \"_id\": \"hRkHyUpQRIJcIoUF\"\n        },\n        {\n            \"nome\": \"Merlin\",\n            \"email\": \"Jay_Franey@yahoo.com\",\n            \"password\": \"dKnep4hQwp5Vz8P\",\n            \"administrador\": \"true\",\n            \"_id\": \"hYk7vTPtHLvS7jq6\"\n        },\n        {\n            \"nome\": \"Erick Fadel\",\n            \"email\": \"Arnulfo_Dickinson@yahoo.com\",\n            \"password\": \"BE9Q31NEe5JzbNR\",\n            \"administrador\": \"true\",\n            \"_id\": \"hthQ4H0uh7DWtbet\"\n        },\n        {\n            \"nome\": \"Vergie\",\n            \"email\": \"Charles25@yahoo.com\",\n            \"password\": \"2mkq74tuPVxaf9a\",\n            \"administrador\": \"false\",\n            \"_id\": \"hwKEzRLcXf6QAFu5\"\n        },\n        {\n            \"nome\": \"João Admin 1746800564159\",\n            \"email\": \"joao.admin1746800564159@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"i0bh3jY2X6BX6JQz\"\n        },\n        {\n            \"nome\": \"Kelli Nitzsche\",\n            \"email\": \"Myra34@hotmail.com\",\n            \"password\": \"FFXlegpuvHV0cKr\",\n            \"administrador\": \"true\",\n            \"_id\": \"i1VkU7FJ8XeYUEIe\"\n        },\n        {\n            \"nome\": \"Abbey\",\n            \"email\": \"Edythe45@yahoo.com\",\n            \"password\": \"lkUpxuWHRC0CoCM\",\n            \"administrador\": \"true\",\n            \"_id\": \"i7vOhoHPInJQkomY\"\n        },\n        {\n            \"nome\": \"Everett Mills\",\n            \"email\": \"Garrett18@yahoo.com\",\n            \"password\": \"XWInvBfhz8awOJn\",\n            \"administrador\": \"false\",\n            \"_id\": \"iqRngP8mmFCu32gl\"\n        },\n        {\n            \"nome\": \"Falha Esperada\",\n            \"email\": \"falha1746793719573@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"jCBupVdmGX4CIReG\"\n        },\n        {\n            \"nome\": \"Onie\",\n            \"email\": \"Kara_King@gmail.com\",\n            \"password\": \"JqUbhrOy1DBWHQm\",\n            \"administrador\": \"false\",\n            \"_id\": \"jUBWaXmZcE6l6YWT\"\n        },\n        {\n            \"nome\": \"Usuário Teste 1746800579600\",\n            \"email\": \"usuario1746800579600@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"jt60hifOY6Gevukq\"\n        },\n        {\n            \"nome\": \"Teste QA\",\n            \"email\": \"testeqa{{randomNumber}}@exemplo.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"k8zAuTVIoqwgNgjC\"\n        },\n        {\n            \"nome\": \"Vincenzo\",\n            \"email\": \"Ozella_Conn6@yahoo.com\",\n            \"password\": \"BiI67cvE53OAwT2\",\n            \"administrador\": \"false\",\n            \"_id\": \"kXqzzJxHoiXStYvv\"\n        },\n        {\n            \"nome\": \"Dianna\",\n            \"email\": \"Finn_Becker@hotmail.com\",\n            \"password\": \"3oTXcW8b4CvyFyV\",\n            \"administrador\": \"false\",\n            \"_id\": \"kd0NmGbkzRHx02ij\"\n        },\n        {\n            \"nome\": \"Dr. Ismael Konopelski\",\n            \"email\": \"Brock.Murazik@yahoo.com\",\n            \"password\": \"5VutbvV7m9qCUa1\",\n            \"administrador\": \"true\",\n            \"_id\": \"l1xDUVbKuLsJcpHj\"\n        },\n        {\n            \"nome\": \"Maria Usuária 1746788343636\",\n            \"email\": \"maria1746788343636@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"false\",\n            \"_id\": \"lbuuIfVyfX7v1weN\"\n        },\n        {\n            \"nome\": \"Luis Bosco\",\n            \"email\": \"Elena.Brown40@gmail.com\",\n            \"password\": \"2TKqr9kxqdXcldB\",\n            \"administrador\": \"true\",\n            \"_id\": \"letGhM3UG0TdYRdG\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"k4oh59ef@yahoo.com\",\n            \"password\": \"xxx\",\n            \"administrador\": \"false\",\n            \"_id\": \"lo0KJ1vVUb6fBYEK\"\n        },\n        {\n            \"nome\": \"Mabel\",\n            \"email\": \"Amiya.Harber@yahoo.com\",\n            \"password\": \"rfHXt3wjenWZdPl\",\n            \"administrador\": \"false\",\n            \"_id\": \"lplItuXIX5M1B6Q5\"\n        },\n        {\n            \"nome\": \"Magnus\",\n            \"email\": \"Bonita_Schimmel@hotmail.com\",\n            \"password\": \"mB8Gdt0d1FawuYP\",\n            \"administrador\": \"false\",\n            \"_id\": \"mPaDTh1fUFuz9340\"\n        },\n        {\n            \"nome\": \"Usuário Novo\",\n            \"email\": \"novoemail{{randomNumber}}@teste.com\",\n            \"password\": \"senha123\",\n            \"administrador\": \"false\",\n            \"_id\": \"mRj5geSiQMILSloR\"\n        },\n        {\n            \"nome\": \"Judd\",\n            \"email\": \"Warren88@yahoo.com\",\n            \"password\": \"327jRuKRPzXceR5\",\n            \"administrador\": \"false\",\n            \"_id\": \"mewr00dweQrWO89H\"\n        },\n        {\n            \"nome\": \"Maynard\",\n            \"email\": \"Alyce20@hotmail.com\",\n            \"password\": \"By2AVH9UwSzVISj\",\n            \"administrador\": \"false\",\n            \"_id\": \"mil5lgOWePX1w3a3\"\n        },\n        {\n            \"nome\": \"Malcolm\",\n            \"email\": \"Frank_Schinner15@hotmail.com\",\n            \"password\": \"8_AdTRTlg6Rwc_4\",\n            \"administrador\": \"false\",\n            \"_id\": \"n1pVGxyVqQs8Q7o4\"\n        },\n        {\n            \"nome\": \"Allen Kerluke\",\n            \"email\": \"Kristin.Beier10@yahoo.com\",\n            \"password\": \"vy4GGhCpCbinKWS\",\n            \"administrador\": \"false\",\n            \"_id\": \"nGdS35oKHlr6e0JL\"\n        },\n        {\n            \"nome\": \"Justyn\",\n            \"email\": \"Ron69@hotmail.com\",\n            \"password\": \"marV8nqV0wksSSA\",\n            \"administrador\": \"true\",\n            \"_id\": \"nQOJxq4TYhG8QJx7\"\n        },\n        {\n            \"nome\": \"Catalina\",\n            \"email\": \"Clemens_Turcotte74@hotmail.com\",\n            \"password\": \"jRB4TwFPrkoreyp\",\n            \"administrador\": \"false\",\n            \"_id\": \"nQpgl8YD8yaA8Ubf\"\n        },\n        {\n            \"nome\": \"Archibald\",\n            \"email\": \"Darby.Nikolaus34@yahoo.com\",\n            \"password\": \"HXnwGG7XthOIHHt\",\n            \"administrador\": \"true\",\n            \"_id\": \"oC0DO0zBDR5LJ6BA\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"ooor1m6i@yahoo.com\",\n            \"password\": \"xxx\",\n            \"administrador\": \"false\",\n            \"_id\": \"oI9xYk1shIoxa2gM\"\n        },\n        {\n            \"nome\": \"Palma\",\n            \"email\": \"Adell.Bashirian@gmail.com\",\n            \"password\": \"PbjbG0U7PNFM4Bc\",\n            \"administrador\": \"false\",\n            \"_id\": \"oIvKPAi2Nx4zOjXY\"\n        },\n        {\n            \"nome\": \"Genesis\",\n            \"email\": \"Green_Becker-Ullrich59@hotmail.com\",\n            \"password\": \"zQl2ZQu3RDV49VJ\",\n            \"administrador\": \"false\",\n            \"_id\": \"oMEPrf6zHrgKsUDB\"\n        },\n        {\n            \"nome\": \"Nedra.Hessel\",\n            \"email\": \"Agustin93@hotmail.com\",\n            \"password\": \"102604336\",\n            \"administrador\": \"true\",\n            \"_id\": \"oYAei25o5Q97ltOG\"\n        },\n        {\n            \"nome\": \"Falha Esperada\",\n            \"email\": \"falha1746800599070@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"odJzcA52eaTjnUeX\"\n        },\n        {\n            \"nome\": \"Jameson\",\n            \"email\": \"Catharine_Legros77@yahoo.com\",\n            \"password\": \"YM0JkXc6IXwrqpJ\",\n            \"administrador\": \"true\",\n            \"_id\": \"oejbpzwyLERmFXew\"\n        },\n        {\n            \"nome\": \"João Silva\",\n            \"email\": \"joao@gmail.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"ooJ7v5GPY1xv8sbK\"\n        },\n        {\n            \"nome\": \"Gladyce\",\n            \"email\": \"Glenda87@hotmail.com\",\n            \"password\": \"Ieivj7G6qUxww4O\",\n            \"administrador\": \"true\",\n            \"_id\": \"ovd0BEGpTCcPdN9W\"\n        },\n        {\n            \"nome\": \"Adolphus\",\n            \"email\": \"Jevon_Carter19@gmail.com\",\n            \"password\": \"YcpqwJmJvJQ3CCj\",\n            \"administrador\": \"false\",\n            \"_id\": \"p57CFpkfopgyHQ8u\"\n        },\n        {\n            \"nome\": \"Login Incorreto\",\n            \"email\": \"valido1746793704531@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"p9Hvq8yQwo7Nr8BI\"\n        },\n        {\n            \"nome\": \"Andreane\",\n            \"email\": \"Arnulfo.Dach@yahoo.com\",\n            \"password\": \"iAhgjTU3XgIWFWY\",\n            \"administrador\": \"false\",\n            \"_id\": \"pFsnKmBmLf9YtLIM\"\n        },\n        {\n            \"nome\": \"Candida\",\n            \"email\": \"Bartholome_Bayer67@gmail.com\",\n            \"password\": \"Kc_Gb5WsA6WUNi4\",\n            \"administrador\": \"false\",\n            \"_id\": \"pHJlvKnjxnFvAFJE\"\n        },\n        {\n            \"nome\": \"Monique McGlynn\",\n            \"email\": \"Skye98@hotmail.com\",\n            \"password\": \"JXTUig8p054W402\",\n            \"administrador\": \"true\",\n            \"_id\": \"prAnsGPMdZaJ8s1n\"\n        },\n        {\n            \"nome\": \"Drake\",\n            \"email\": \"Marge_Rolfson@gmail.com\",\n            \"password\": \"dMM0LFp7XrQyXw4\",\n            \"administrador\": \"false\",\n            \"_id\": \"qZaPZEyEXtIUHwgn\"\n        },\n        {\n            \"nome\": \"Abe.Mohr95\",\n            \"email\": \"Cayla.Bailey18@yahoo.com\",\n            \"password\": \"349464096\",\n            \"administrador\": \"true\",\n            \"_id\": \"qazVJ9PNzv1nx38B\"\n        },\n        {\n            \"nome\": \"Taya\",\n            \"email\": \"Devante55@yahoo.com\",\n            \"password\": \"tR246Ss_BnpDRWX\",\n            \"administrador\": \"false\",\n            \"_id\": \"qe4ev67CifDND4OG\"\n        },\n        {\n            \"nome\": \"Cesar\",\n            \"email\": \"Lorena_Brakus72@yahoo.com\",\n            \"password\": \"7fZ5Z4kgi1dO5NO\",\n            \"administrador\": \"true\",\n            \"_id\": \"r5ZEw10KB3xrpvqj\"\n        },\n        {\n            \"nome\": \"Dulce\",\n            \"email\": \"Elyse82@yahoo.com\",\n            \"password\": \"QpLPfcG8WJrh5US\",\n            \"administrador\": \"false\",\n            \"_id\": \"rYrlSa1skOXsb4wm\"\n        },\n        {\n            \"nome\": \"Ronny\",\n            \"email\": \"Lonny31@gmail.com\",\n            \"password\": \"XFOcemOoh9ddWA5\",\n            \"administrador\": \"false\",\n            \"_id\": \"rdmXypa0TMQWZlpW\"\n        },\n        {\n            \"nome\": \"Kody\",\n            \"email\": \"Violette.Gislason54@gmail.com\",\n            \"password\": \"lMRzKcgDQ2DP3RS\",\n            \"administrador\": \"false\",\n            \"_id\": \"rf1JlNwPhem3GXzh\"\n        },\n        {\n            \"nome\": \"Clair\",\n            \"email\": \"jerroldstamm@qa.com.br\",\n            \"password\": \"8IVzGkGy8w\",\n            \"administrador\": \"true\",\n            \"_id\": \"ri0fKWZTq2oqZ3ZA\"\n        },\n        {\n            \"nome\": \"Myah\",\n            \"email\": \"Sylvester.Herman@hotmail.com\",\n            \"password\": \"N8atA96E6kipWkF\",\n            \"administrador\": \"true\",\n            \"_id\": \"rjBITiXDw6pze0yy\"\n        },\n        {\n            \"nome\": \"Jamie Gulgowski I\",\n            \"email\": \"Jodie.Kirlin-Will63@gmail.com\",\n            \"password\": \"yLOzJhD18NlRnWR\",\n            \"administrador\": \"true\",\n            \"_id\": \"rpZ0i5Lb5n3z3AE5\"\n        },\n        {\n            \"nome\": \"Karianne\",\n            \"email\": \"Foster99@yahoo.com\",\n            \"password\": \"S5NaGONhjmvxw6C\",\n            \"administrador\": \"false\",\n            \"_id\": \"rruv2hgVe1ZWXJuJ\"\n        },\n        {\n            \"nome\": \"Stella Davis\",\n            \"email\": \"Brisa_Rutherford3@yahoo.com\",\n            \"password\": \"87zGK9nixPLpTDx\",\n            \"administrador\": \"false\",\n            \"_id\": \"rwYGGjskBEYQ89dO\"\n        },\n        {\n            \"nome\": \"Carlos Buscador\",\n            \"email\": \"carlos1746788365125@teste.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"s5P3QvEkvRe6lksZ\"\n        },\n        {\n            \"nome\": \"Marcos Atualizado\",\n            \"email\": \"user+1746796016652@example.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"sED0kK7xEXqnvFAK\"\n        },\n        {\n            \"nome\": \"Jasmine Rodriguez\",\n            \"email\": \"Abigayle59@yahoo.com\",\n            \"password\": \"lfwgyltvxiL4DJs\",\n            \"administrador\": \"true\",\n            \"_id\": \"sGpSB0sgXrndPiE9\"\n        },\n        {\n            \"nome\": \"Maria Teste\",\n            \"email\": \"maria1746800594100@teste.com\",\n            \"password\": \"senha321\",\n            \"administrador\": \"false\",\n            \"_id\": \"sjLIAGoEqjouILse\"\n        },\n        {\n            \"nome\": \"Omer\",\n            \"email\": \"Dameon5@yahoo.com\",\n            \"password\": \"0SODW6fio4lQRJa\",\n            \"administrador\": \"false\",\n            \"_id\": \"smsvdpklYofjWqzG\"\n        },\n        {\n            \"nome\": \"Richard\",\n            \"email\": \"Shyann.Mann71@gmail.com\",\n            \"password\": \"20QPldW8iWtV3im\",\n            \"administrador\": \"true\",\n            \"_id\": \"t7D9V5wE4wKpWMVI\"\n        },\n        {\n            \"nome\": \"Login Incorreto\",\n            \"email\": \"valido1746788357283@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"tQx4nFB63zWJI2br\"\n        },\n        {\n            \"nome\": \"Titus\",\n            \"email\": \"Jess97@gmail.com\",\n            \"password\": \"S5KwKzMKFpWmBqp\",\n            \"administrador\": \"false\",\n            \"_id\": \"tzNBsyvh9r9x5XGV\"\n        },\n        {\n            \"nome\": \"Waylon\",\n            \"email\": \"Flossie77@gmail.com\",\n            \"password\": \"Aj1ZuDg_jirbWqC\",\n            \"administrador\": \"true\",\n            \"_id\": \"uqSOjxzUXnQ1uD9k\"\n        },\n        {\n            \"nome\": \"Ernesto_Nienow\",\n            \"email\": \"Scarlett.Klein32@hotmail.com\",\n            \"password\": \"127426875\",\n            \"administrador\": \"true\",\n            \"_id\": \"vRXPof21hNFmdi5Y\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"teste_un5d0s@qa.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"vUoR40dsD3MO98n5\"\n        },\n        {\n            \"nome\": \"Trenton\",\n            \"email\": \"Marlon_Beier@hotmail.com\",\n            \"password\": \"FUfvRj85wX3XXrM\",\n            \"administrador\": \"false\",\n            \"_id\": \"vYS7w2U8UIKljbbt\"\n        },\n        {\n            \"nome\": \"Modesto\",\n            \"email\": \"Evalyn.Prosacco29@hotmail.com\",\n            \"password\": \"CaxynFAkV_BryCy\",\n            \"administrador\": \"false\",\n            \"_id\": \"w4MPYYrQEm8E48bY\"\n        },\n        {\n            \"nome\": \"Clarence Grady\",\n            \"email\": \"clarence-grady-teste@tuamaeaquelaursa.com\",\n            \"password\": \"21234343\",\n            \"administrador\": \"true\",\n            \"_id\": \"w8QFaBTt61uS787u\"\n        },\n        {\n            \"nome\": \"João Admin 1746787787782\",\n            \"email\": \"joao.admin1746787787782@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"wN4dDZhOmSMOTNrw\"\n        },\n        {\n            \"nome\": \"Aiden\",\n            \"email\": \"Felicity66@yahoo.com\",\n            \"password\": \"mN5GrHBHFspylJ5\",\n            \"administrador\": \"false\",\n            \"_id\": \"wVAq6V5QwvCC5HWw\"\n        },\n        {\n            \"nome\": \"Maria Teste\",\n            \"email\": \"maria1746787822779@teste.com\",\n            \"password\": \"senha321\",\n            \"administrador\": \"false\",\n            \"_id\": \"wVclU8fHmde04Fcp\"\n        },\n        {\n            \"nome\": \"Melvin Kihn\",\n            \"email\": \"Dandre2@hotmail.com\",\n            \"password\": \"TTV4m8f7Q00KWvG\",\n            \"administrador\": \"true\",\n            \"_id\": \"wYB8MKpHdfIfdEqH\"\n        },\n        {\n            \"nome\": \"Daphne\",\n            \"email\": \"Quentin_Jast65@gmail.com\",\n            \"password\": \"hLybwOoY5yobDBK\",\n            \"administrador\": \"true\",\n            \"_id\": \"wvNKvZfQ6l2rAUYP\"\n        },\n        {\n            \"nome\": \"Lena Nitzsche\",\n            \"email\": \"Shaylee_Rohan@hotmail.com\",\n            \"password\": \"h_opz82P_bBpv3c\",\n            \"administrador\": \"true\",\n            \"_id\": \"wvixdQKDSObEtQT8\"\n        },\n        {\n            \"nome\": \"Lori\",\n            \"email\": \"Jake.Schamberger21@gmail.com\",\n            \"password\": \"sLutwG_Lxg6GnmZ\",\n            \"administrador\": \"false\",\n            \"_id\": \"wyPNxO7nfRHLAKYK\"\n        },\n        {\n            \"nome\": \"Login Incorreto\",\n            \"email\": \"valido1746800583859@teste.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"x2RMDMSnvIwUmTVh\"\n        },\n        {\n            \"nome\": \"Célio Lopes\",\n            \"email\": \"celiolopescarvalho1@gmail.com\",\n            \"password\": \"teste123\",\n            \"administrador\": \"true\",\n            \"_id\": \"x7wC0Z4CYvoMEh5W\"\n        },\n        {\n            \"nome\": \"Vinicius Carneiro Nascimento\",\n            \"email\": \"contato.vinicius@gmail.com\",\n            \"password\": \"Senha12345@\",\n            \"administrador\": \"false\",\n            \"_id\": \"xgXKi3HPgdqx6oBX\"\n        },\n        {\n            \"nome\": \"Carrie\",\n            \"email\": \"Erna.Hills87@gmail.com\",\n            \"password\": \"7jdDrcKsB6qfUnW\",\n            \"administrador\": \"true\",\n            \"_id\": \"xsAZPa4kaJR9bV11\"\n        },\n        {\n            \"nome\": \"Ardella\",\n            \"email\": \"Brandt.Klocko12@hotmail.com\",\n            \"password\": \"fM0fREj36JeI59u\",\n            \"administrador\": \"false\",\n            \"_id\": \"yRRgnk2OSW2J99qn\"\n        },\n        {\n            \"nome\": \"lucas\",\n            \"email\": \"18@teste.com\",\n            \"password\": \"1234\",\n            \"administrador\": \"true\",\n            \"_id\": \"yRjAcj7fBL02JO0B\"\n        },\n        {\n            \"nome\": \"Jessica Stokes\",\n            \"email\": \"jessicastokes@test.com\",\n            \"password\": \"Test;123\",\n            \"administrador\": \"true\",\n            \"_id\": \"yZmIOCbehSsP9SmV\"\n        },\n        {\n            \"nome\": \"Sally Baumbach\",\n            \"email\": \"Gail.Weissnat@yahoo.com\",\n            \"password\": \"bZqHlfcrpLQtwWm\",\n            \"administrador\": \"false\",\n            \"_id\": \"yddU418lfpRTZ490\"\n        },\n        {\n            \"nome\": \"Earnest\",\n            \"email\": \"Alberta_Wiza55@yahoo.com\",\n            \"password\": \"sa0fsUGeMVwhj7a\",\n            \"administrador\": \"false\",\n            \"_id\": \"yttdqWTupWdHTXEz\"\n        },\n        {\n            \"nome\": \"Usuário Teste\",\n            \"email\": \"teste_wv5km3@qa.com\",\n            \"password\": \"123456\",\n            \"administrador\": \"true\",\n            \"_id\": \"zTBb7gdCa639O8iO\"\n        },\n        {\n            \"nome\": \"João dos Santos\",\n            \"email\": \"joão34@qa.com.br\",\n            \"password\": \"senha34\",\n            \"administrador\": \"true\",\n            \"_id\": \"zo6uK2TxVweNK0WH\"\n        },\n        {\n            \"nome\": \"Brad Walter\",\n            \"email\": \"Estelle.Buckridge@gmail.com\",\n            \"password\": \"m8fX1t5bFazcY8r\",\n            \"administrador\": \"true\",\n            \"_id\": \"zx0bVJczWdBFum45\"\n        }\n    ]\n}"
+								},
+								{
+									"name": "Usuário não encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/usuarios/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"usuarios",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Cadastro de usuário",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"\r",
+									"// Add a test to validate response schema\r",
+									"pm.test(\"Response schema is valid\", function () {\r",
+									"  var schema = {\r",
+									"    type: \"object\",\r",
+									"    properties: {\r",
+									"      // Add properties based on the expected schema of the response\r",
+									"    },\r",
+									"    required: [/* Add required properties based on the expected schema of the response */],\r",
+									"  };\r",
+									"\r",
+									"  var response = xml2Json(pm.response.text());\r",
+									"  pm.expect(tv4.validate(response, schema)).to.be.true;\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao@valido.com\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"true\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CT-001 – Cadastro válido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"jojo@valido.com\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "e04e8bac14dbfbe25f6683a51d6448cf;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:04:08 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"YLbiWHzBxnL0QVR5\"\n}"
+						},
+						{
+							"name": "CT-004 – Cadastro com e-mail de domínio restrito",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao@hotmail.com\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "dda969bb05faed7c0a91703f89b8a5de;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:33:24 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Cadastro realizado com sucesso\",\n    \"_id\": \"KukQcml4TIxMI6zh\"\n}"
+						},
+						{
+							"name": "CT-012 – Campos obrigatórios",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "ae0d93b2e36e46929b25bb064b4c9308"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:01:42 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"email\": \"email é obrigatório\"\n}"
+						},
+						{
+							"name": "CT-013 – Campo “administrador” com valor inválido",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"jojo@valido.com\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"talvez\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "cded85af02963d9452916998257d7aff;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:05:15 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"administrador\": \"administrador deve ser 'true' ou 'false'\"\n}"
+						},
+						{
+							"name": "CT-014 – Criação de usuário com nome vazio",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"nome\": \"\",\r\n  \"email\": \"jojo@valido.com\",\r\n  \"password\": \"123456\",\r\n  \"administrador\": \"true\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "bc8735ddeab3ba72b351f08265eaa23f;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:06:55 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"nome\": \"nome não pode ficar em branco\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Editar usuário",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"administrador\": \"true\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/:_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "0uxuPY0cbmQhpEz1",
+									"description": "(Required) ID do usuário"
+								}
+							]
+						},
+						"description": "Não é permitido cadastrar usuário com email já utilizado.\nCaso não seja encontrado usuário com o ID informado é realizado novo cadastro ao invés de alteração.\n"
+					},
+					"response": [
+						{
+							"name": "Alterado com sucesso",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"administrador\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Cadastro com sucesso",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"administrador\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id"
+										}
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"_id\": \"<string>\"\n}"
+						},
+						{
+							"name": "CT-009 – E-mail duplicado",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@valido.com\",\n  \"password\": \"123456\",\n  \"administrador\": \"true\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "6c7089a4ef5bbbfc40a6ac04d7ba95e8;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 15:25:43 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Este email já está sendo usado\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Excluir usuário",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/usuarios/:_id",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"usuarios",
+								":_id"
+							],
+							"variable": [
+								{
+									"key": "_id",
+									"value": "0uxuPY0cbmQhpEz1",
+									"description": "(Required) ID do usuário"
+								}
+							]
+						},
+						"description": "Não é permitido excluir usuário com carrinho."
+					},
+					"response": [
+						{
+							"name": "Usuário com carrinho cadastrado",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"idCarrinho\": \"<string>\"\n}"
+						},
+						{
+							"name": "Excluir usuário",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/usuarios/{id-invalido}",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"usuarios",
+										"{id-invalido}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "0132d89802d88a06eb9f9ef83da44938;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 16:03:20 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Nenhum registro excluído\"\n}"
+						}
+					]
+				}
+			],
+			"description": "**Sendo** um vendedor de uma loja  \n**Gostaria** de poder me cadastrar no Marketplace do ServeRest  \n**Para** poder realizar as vendas dos meus produtos."
+		},
+		{
+			"name": "login",
+			"item": [
+				{
+					"name": "Login com credenciais válidas",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Login com sucesso\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.have.jsonBody('message', 'Login realizado com sucesso');\r",
+									"});\r",
+									"\r",
+									"// Armazenar token para uso futuro\r",
+									"const jsonData = pm.response.json();\r",
+									"pm.environment.set(\"token\", jsonData.authorization);\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"joao@valido.com\",\n  \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						},
+						"description": "A duração do token retornado em authorization é de 600 segundos (10 minutos). Caso esteja expirado irá receber status code 401 (Unauthorized).\n"
+					},
+					"response": [
+						{
+							"name": "E-mail e/ou senha inválidos",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"joao¹@valido.com\",\n  \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "b0a8f94b50e09a1b76f518704cde7814;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 16:15:18 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "48"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email e/ou senha inválidos\"\n}"
+						},
+						{
+							"name": "Login com credenciais válidas",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"joao@valido.com\",\n  \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "access-control-allow-origin",
+									"value": "*"
+								},
+								{
+									"key": "x-dns-prefetch-control",
+									"value": "off"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15552000; includeSubDomains"
+								},
+								{
+									"key": "x-download-options",
+									"value": "noopen"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "content-type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "x-cloud-trace-context",
+									"value": "e8df988ecb0800f3a1cf357f5906a97d;o=1"
+								},
+								{
+									"key": "date",
+									"value": "Fri, 09 May 2025 16:21:57 GMT"
+								},
+								{
+									"key": "server",
+									"value": "Google Frontend"
+								},
+								{
+									"key": "Content-Length",
+									"value": "269"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Login realizado com sucesso\",\n    \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvYW9AdmFsaWRvLmNvbSIsInBhc3N3b3JkIjoiMTIzNDU2IiwiaWF0IjoxNzQ2ODA3NzE3LCJleHAiOjE3NDY4MDgzMTd9.6W33ArIUnFyTowjYfmEslIK5Brtvyj0Bz675fYTvFks\"\n}"
+						}
+					]
+				}
+			],
+			"description": "**Sendo** um vendedor de uma loja com cadastro já realizado  \n**Gostaria** de poder me autenticar no Marketplace da ServeRest  \n**Para** poder cadastrar, editar, atualizar e excluir meus produtos."
+		},
+		{
+			"name": "produtos",
+			"item": [
+				{
+					"name": "{_id}",
+					"item": [
+						{
+							"name": "Buscar produto por ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": "BeeJh5lz3k6kSIzA",
+											"description": "(Required) ID do produto"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Produto encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\",\n  \"_id\": \"<string>\"\n}"
+								},
+								{
+									"name": "Produto não encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Excluir produto",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": "K6leHdftCeOJj8BJ",
+											"description": "(Required) ID do produto"
+										}
+									]
+								},
+								"description": "Não é permitido excluir produto que faz parte de carrinho."
+							},
+							"response": [
+								{
+									"name": "Registro excluído com sucesso | Nenhum registro excluído",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Produto faz parte de carrinho",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"idCarrinho\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+								},
+								{
+									"name": "Token ausente, inválido ou expirado",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Rota exclusiva para administradores (`administrador = true`)",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Editar produto",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": "K6leHdftCeOJj8BJ",
+											"description": "(Required) ID do produto"
+										}
+									]
+								},
+								"description": "Não é permitido cadastrar produto com nome já utilizado.\nCaso não seja encontrado usuário com o ID informado é realizado novo cadastro ao invés de alteração.\n"
+							},
+							"response": [
+								{
+									"name": "Alterado com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Cadastro com sucesso",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\",\n  \"_id\": \"<string>\"\n}"
+								},
+								{
+									"name": "Já existe produto com esse nome",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Token ausente, inválido ou expirado",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"Logitech MX Vertical\",\n  \"preco\": 470,\n  \"descricao\": \"Mouse\",\n  \"quantidade\": 381\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "access-control-allow-origin",
+											"value": "*"
+										},
+										{
+											"key": "x-dns-prefetch-control",
+											"value": "off"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "strict-transport-security",
+											"value": "max-age=15552000; includeSubDomains"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "x-cloud-trace-context",
+											"value": "21ecca77cb969f55be6146991d9e977e;o=1"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 09 May 2025 16:24:36 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Google Frontend"
+										},
+										{
+											"key": "Content-Length",
+											"value": "103"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Token de acesso ausente, inválido, expirado ou usuário do token não existe mais\"\n}"
+								},
+								{
+									"name": "Rota exclusiva para administradores (`administrador = true`)",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/produtos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"produtos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Forbidden",
+									"code": 403,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Listar produtos cadastrados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/produtos?_id=<string>&nome=<string>&preco=<integer>&descricao=<string>&quantidade=<integer>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produtos"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "<string>"
+								},
+								{
+									"key": "nome",
+									"value": "<string>"
+								},
+								{
+									"key": "preco",
+									"value": "<integer>"
+								},
+								{
+									"key": "descricao",
+									"value": "<string>"
+								},
+								{
+									"key": "quantidade",
+									"value": "<integer>"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Lista de produtos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/produtos?_id=<string>&nome=<string>&preco=<integer>&descricao=<string>&quantidade=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "<string>"
+										},
+										{
+											"key": "nome",
+											"value": "<string>"
+										},
+										{
+											"key": "preco",
+											"value": "<integer>"
+										},
+										{
+											"key": "descricao",
+											"value": "<string>"
+										},
+										{
+											"key": "quantidade",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"quantidade\": \"<number>\",\n  \"produtos\": [\n    {\n      \"nome\": \"<string>\",\n      \"preco\": \"<integer>\",\n      \"descricao\": \"<string>\",\n      \"quantidade\": \"<integer>\",\n      \"_id\": \"<string>\"\n    },\n    {\n      \"nome\": \"<string>\",\n      \"preco\": \"<integer>\",\n      \"descricao\": \"<string>\",\n      \"quantidade\": \"<integer>\",\n      \"_id\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Cadastrar produto",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/produtos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"produtos"
+							]
+						},
+						"description": "Não é permitido cadastrar produto com nome já utilizado"
+					},
+					"response": [
+						{
+							"name": "Cadastro com sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"_id\": \"<string>\"\n}"
+						},
+						{
+							"name": "Já existe produto com esse nome",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Token ausente, inválido ou expirado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Rota exclusiva para administradores (`administrador = true`)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"<string>\",\n  \"preco\": \"<integer>\",\n  \"descricao\": \"<string>\",\n  \"quantidade\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/produtos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"produtos"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"description": "**Sendo** um vendedor de uma loja com cadastro já realizado  \n**Gostaria** de poder me autenticar e cadastrar produtos no Marketplace do ServeRest  \n**Para** poder cadastrar, editar, atualizar e excluir meus produtos."
+		},
+		{
+			"name": "carrinhos",
+			"item": [
+				{
+					"name": "{_id}",
+					"item": [
+						{
+							"name": "Buscar carrinho por ID",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos/:_id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										":_id"
+									],
+									"variable": [
+										{
+											"key": "_id",
+											"value": "qbMqntef4iTOwWfg",
+											"description": "(Required) ID do carrinho"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Carrinho encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"produtos\": [\n    {\n      \"idProduto\": \"<string>\",\n      \"quantidade\": \"<integer>\",\n      \"precoUnitario\": \"<integer>\"\n    },\n    {\n      \"idProduto\": \"<string>\",\n      \"quantidade\": \"<integer>\",\n      \"precoUnitario\": \"<integer>\"\n    }\n  ],\n  \"precoTotal\": \"<integer>\",\n  \"quantidadeTotal\": \"<integer>\",\n  \"idUsuario\": \"<string>\",\n  \"_id\": \"<string>\"\n}"
+								},
+								{
+									"name": "Carrinho não encontrado",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/:_id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												":_id"
+											],
+											"variable": [
+												{
+													"key": "_id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "concluir-compra",
+					"item": [
+						{
+							"name": "Excluir carrinho",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos/concluir-compra",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										"concluir-compra"
+									]
+								},
+								"description": "Ao concluir uma compra o carrinho é excluído.\nO carrinho excluído será o vinculado ao usuário do `token` utilizado.\n"
+							},
+							"response": [
+								{
+									"name": "Registro excluído com sucesso | Não foi encontrado carrinho para esse usuário",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/concluir-compra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												"concluir-compra"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Token ausente, inválido ou expirado",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/concluir-compra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												"concluir-compra"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "cancelar-compra",
+					"item": [
+						{
+							"name": "Excluir carrinho e retornar produtos para estoque",
+							"request": {
+								"auth": {
+									"type": "apikey",
+									"apikey": [
+										{
+											"key": "key",
+											"value": "Authorization",
+											"type": "string"
+										},
+										{
+											"key": "value",
+											"value": "{{apiKey}}",
+											"type": "string"
+										},
+										{
+											"key": "in",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos/cancelar-compra",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos",
+										"cancelar-compra"
+									]
+								},
+								"description": "Ao cancelar uma compra o carrinho é excluído e o estoque dos produtos desse carrinho é reabastecido.\nO carrinho excluído será o vinculado ao usuário do `token` utilizado.\n"
+							},
+							"response": [
+								{
+									"name": "Registro excluído com sucesso | Não foi encontrado carrinho para esse usuário",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/cancelar-compra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												"cancelar-compra"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								},
+								{
+									"name": "Token ausente, inválido ou expirado",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "<API Key>",
+												"description": "Added as a part of security scheme: apikey"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/carrinhos/cancelar-compra",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"carrinhos",
+												"cancelar-compra"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"message\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Listar carrinhos cadastrados",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/carrinhos?_id=<string>&precoTotal=<integer>&quantidadeTotal=<integer>&idUsuario=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carrinhos"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "<string>"
+								},
+								{
+									"key": "precoTotal",
+									"value": "<integer>"
+								},
+								{
+									"key": "quantidadeTotal",
+									"value": "<integer>"
+								},
+								{
+									"key": "idUsuario",
+									"value": "<string>"
+								}
+							]
+						},
+						"description": "Os carrinhos retornados são únicos por usuário"
+					},
+					"response": [
+						{
+							"name": "Lista de carrinhos",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos?_id=<string>&precoTotal=<integer>&quantidadeTotal=<integer>&idUsuario=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									],
+									"query": [
+										{
+											"key": "_id",
+											"value": "<string>"
+										},
+										{
+											"key": "precoTotal",
+											"value": "<integer>"
+										},
+										{
+											"key": "quantidadeTotal",
+											"value": "<integer>"
+										},
+										{
+											"key": "idUsuario",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"quantidade\": \"<number>\",\n  \"carrinhos\": [\n    {\n      \"produtos\": [\n        {\n          \"idProduto\": \"<string>\",\n          \"quantidade\": \"<integer>\",\n          \"precoUnitario\": \"<integer>\"\n        },\n        {\n          \"idProduto\": \"<string>\",\n          \"quantidade\": \"<integer>\",\n          \"precoUnitario\": \"<integer>\"\n        }\n      ],\n      \"precoTotal\": \"<integer>\",\n      \"quantidadeTotal\": \"<integer>\",\n      \"idUsuario\": \"<string>\",\n      \"_id\": \"<string>\"\n    },\n    {\n      \"produtos\": [\n        {\n          \"idProduto\": \"<string>\",\n          \"quantidade\": \"<integer>\",\n          \"precoUnitario\": \"<integer>\"\n        },\n        {\n          \"idProduto\": \"<string>\",\n          \"quantidade\": \"<integer>\",\n          \"precoUnitario\": \"<integer>\"\n        }\n      ],\n      \"precoTotal\": \"<integer>\",\n      \"quantidadeTotal\": \"<integer>\",\n      \"idUsuario\": \"<string>\",\n      \"_id\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Cadastrar carrinho",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test to check for the response content type\r",
+									"pm.test(\"Response has content type application/json\", function () {\r",
+									"    pm.expect(pm.response).to.have.header('Content-Type', 'application/json');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								},
+								{
+									"key": "key",
+									"value": "Authorization",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuarioId\": \"639adf8f8a6e2bd02bf59487\",\r\n  \"produtos\": [\r\n    {\r\n      \"produtoId\": \"639adf8f8a6e2bd02bf59488\",\r\n      \"quantidade\": 2\r\n    },\r\n    {\r\n      \"produtoId\": \"639adf8f8a6e2bd02bf59489\",\r\n      \"quantidade\": \"1\"\r\n      \"administrador\" = \"true\"\r\n    }\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carrinhos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carrinhos"
+							]
+						},
+						"description": "O carrinho é vinculado ao usuário do token enviado no header `Authorization`, sendo possível cadastrar apenas 1 carrinho por usuário.\nAo cadastrar carrinho com sucesso é feita a redução da quantidade no cadastro de cada produto inserido no carrinho.\n"
+					},
+					"response": [
+						{
+							"name": "Cadastro com sucesso",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"produtos\": {\n    \"idProduto\": \"<string>\",\n    \"quantidade\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\",\n  \"_id\": \"<string>\"\n}"
+						},
+						{
+							"name": "Algo deu errado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"produtos\": {\n    \"idProduto\": \"<string>\",\n    \"quantidade\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						},
+						{
+							"name": "Token ausente, inválido ou expirado",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"produtos\": {\n    \"idProduto\": \"<string>\",\n    \"quantidade\": \"<integer>\"\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/carrinhos",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carrinhos"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"message\": \"<string>\"\n}"
+						}
+					]
+				}
+			],
+			"description": "**Como** um vendedor autenticado no Marketplace da ServeRest  \n**Quero** poder adicionar produtos ao carrinho, consultar, finalizar ou cancelar uma compra  \n**Para** garantir que os pedidos possam ser preparados e que o estoque seja controlado corretamente."
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://serverest.dev"
+		},
+		{
+			"key": "user_email",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_password",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "user_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
