@@ -10,6 +10,7 @@ ${REGISTER_PATH}  /register
 ${USERS_PATH}     /users
 ${DEFAULT_EMAIL}  eve.holt@reqres.in
 ${DEFAULT_PASS}   cityslicka
+${EMPTY}          # string vazia
 
 *** Keywords ***
 
@@ -19,7 +20,7 @@ Verificar Status Code
 
 Verificar Chave no JSON
     [Arguments]    ${response}    ${json_path}=${EMPTY}    ${chave}
-    ${json}=    Evaluate    ${response.json()}
+    ${json}=    To JSON    ${response.content}
     IF    '${json_path}' == '' or '${json_path}' == '$'
         Dictionary Should Contain Key    ${json}    ${chave}
     ELSE
@@ -29,13 +30,11 @@ Verificar Chave no JSON
 
 Preparar Body Login
     [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
-    [Return]    ${body}
     ${body}=    Create Dictionary    email=${email}    password=${password}
     [Return]    ${body}
 
 Preparar Body Register
     [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
-    [Return]    ${body}
     ${body}=    Create Dictionary    email=${email}    password=${password}
     [Return]    ${body}
 
@@ -43,7 +42,7 @@ Preparar Body Ausente
     [Arguments]    ${fields}
     ${body}=    Create Dictionary
     :FOR    ${field}    IN    @{fields}
-    \    Set To Dictionary    ${body}    ${field}=
+    \    Set To Dictionary    ${body}    ${field}    ${EMPTY}
     [Return]    ${body}
 
 Executar Login
@@ -58,9 +57,10 @@ Executar Cadastro
 
 Verificar Mensagem de Erro
     [Arguments]    ${response}    ${msg_erro}
-    ${json}=    Evaluate    ${response.json()}
+    ${json}=    To JSON    ${response.content}
     Dictionary Should Contain Key    ${json}    error
-    Should Be Equal As Strings    ${json['error']}    ${msg_erro}
+    ${error}=    Get From Dictionary    ${json}    error
+    Should Be Equal As Strings    ${error}    ${msg_erro}
 
 Buscar Usuários
     [Arguments]    ${page}=1    ${per_page}=6
@@ -71,9 +71,9 @@ Registrar E Buscar ID do Usuário
     [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
     ${body}=    Preparar Body Register    ${email}    ${password}
     ${response}=    Executar Cadastro    ${body}
-    ${json}=    Evaluate    ${response.json()}
+    ${json}=    To JSON    ${response.content}
     Dictionary Should Contain Key    ${json}    id
-    ${user_id}=    Set Variable    ${json['id']}
+    ${user_id}=    Get From Dictionary    ${json}    id
     [Return]    ${user_id}
 
 Buscar Usuário Por ID
