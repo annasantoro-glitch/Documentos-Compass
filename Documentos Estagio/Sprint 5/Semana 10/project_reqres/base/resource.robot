@@ -18,18 +18,20 @@ verificar o status code
 
 verificar que existe a chave
     [Arguments]    ${jsonPath}    ${chave}
+    ${json}=    Evaluate    ${responseBody.json()}
     IF    "${jsonPath}" == "$"
-        Dictionary Should Contain Key    ${responseBody.json()}    ${chave}
+        Dictionary Should Contain Key    ${json}    ${chave}
     ELSE
-        Dictionary Should Contain Key    ${responseBody.json()${jsonPath}}    ${chave}
-    END    
+        ${sub_dict}=    Get From Dictionary    ${json}    ${jsonPath}
+        Dictionary Should Contain Key    ${sub_dict}    ${chave}
+    END
 
 email e senha são válidos
     ${body}=    Create Dictionary    email=${email}    password=${password}
     Set Global Variable    ${body}
 
 efetuar login
-    ${responseBody} =    POST    ${url}${urlLogin}    json=${body}    expected_status=anything
+    ${responseBody}=    POST    ${url}${urlLogin}    json=${body}    expected_status=anything
     Set Global Variable    ${responseBody}
     Log    Resposta: ${responseBody}
 
@@ -39,7 +41,8 @@ ausência de email e senha
 
 verificar a mensagem de erro
     [Arguments]    ${msgErro}
-    Dictionary Should Contain Item    ${responseBody.json()}    error    ${msgErro}
+    ${json}=    Evaluate    ${responseBody.json()}
+    Dictionary Should Contain Item    ${json}    error    ${msgErro}
 
 email válido mas ausência de senha
     ${body}=    Create Dictionary    email=${email}    password=
@@ -55,11 +58,11 @@ email inválido e uma senha válida
     Set Global Variable    ${body}
 
 email e senha válidos para cadastro
-    ${body}    Create Dictionary    email=${email}    password=${password}
+    ${body}=    Create Dictionary    email=${email}    password=${password}
     Set Global Variable    ${body}
 
 efetuar cadastro
-    ${responseBody}    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
+    ${responseBody}=    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
     Set Global Variable    ${responseBody}
     Log    Resposta: ${responseBody}
 
@@ -81,18 +84,19 @@ verificar usuários cadastrados
     Set Global Variable    ${body}
 
 verificar id de um usuário
-    ${body}    Create Dictionary    email=${email}    password=${password}
-    ${responseBody}    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
+    ${body}=    Create Dictionary    email=${email}    password=${password}
+    ${responseBody}=    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
     Set Global Variable    ${responseBody}
-    ${id}=    Set Variable    ${responseBody.json()['id']}
+    ${json}=    Evaluate    ${responseBody.json()}
+    ${id}=    Get From Dictionary    ${json}    id
     Set Global Variable    ${id}
 
-    ${body}    Create Dictionary    id=${id}
-    ${responseBody}=    Get    ${url}/users/${id}    json=${body}    expected_status=anything
+    ${responseBody}=    GET    ${url}/users/${id}    expected_status=anything
     Set Global Variable    ${responseBody}
-    ${name}=    Set Variable    ${responseBody.json()['data']['first_name']}
+    ${json}=    Evaluate    ${responseBody.json()}
+    ${name}=    Get From Dictionary    ${json['data']}    first_name
     Set Global Variable    ${name}
 
 deletar um usuário
-    ${responseBody}=    DELETE    url=${url}/users/${id}
+    ${responseBody}=    DELETE    ${url}/users/${id}
     Set Global Variable    ${responseBody}
