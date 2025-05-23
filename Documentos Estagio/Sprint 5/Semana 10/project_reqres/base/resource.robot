@@ -71,11 +71,11 @@ ausência de email e senha para cadastro
     Set Global Variable    ${body}
 
 email válido mas ausência de senha para cadastro
-    ${body}=    Create Dictionary    email=eve.holt@reqres.com    password=
+    ${body}=    Create Dictionary    email=${email}    password=
     Set Global Variable    ${body}
 
 ausência de email mas senha válida para cadastro
-    ${body}=    Create Dictionary    email=    password=teste123
+    ${body}=    Create Dictionary    email=    password=${password}
     Set Global Variable    ${body}
 
 verificar usuários cadastrados
