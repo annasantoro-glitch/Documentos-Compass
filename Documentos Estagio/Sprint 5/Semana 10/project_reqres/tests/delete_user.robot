@@ -2,7 +2,7 @@
 Resource    ../base/resource.robot
 Library     RequestsLibrary
 
-# Feature: DELETE - Deletar Usuário
+# Sessão Deletar Usuário
 
 *** Test Cases ***
 Cenário 01: Deletar Usuário Sucesso

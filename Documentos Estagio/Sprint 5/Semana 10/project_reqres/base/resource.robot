@@ -1,98 +1,87 @@
 *** Settings ***
-Library    Collections
-Library    RequestsLibrary
-Library    String
+Library           Collections
+Library           RequestsLibrary
+Library           String
 
 *** Variables ***
-${url}    https://reqres.in/api
-${urlLogin}    /login
-${urlRegister}    /register
-${urlListarUsuarios}    /users
-${email}    eve.holt@reqres.in
-${password}    cityslicka
+${BASE_URL}       https://reqres.in/api
+${LOGIN_PATH}     /login
+${REGISTER_PATH}  /register
+${USERS_PATH}     /users
+${DEFAULT_EMAIL}  eve.holt@reqres.in
+${DEFAULT_PASS}   cityslicka
+${EMPTY}          # string vazia
 
 *** Keywords ***
-verificar o status code
-    [Arguments]    ${statusCode}
-    Should Be Equal As Strings    ${responseBody.status_code}    ${statusCode}
 
-verificar que existe a chave
-    [Arguments]    ${jsonPath}    ${chave}
-    IF    "${jsonPath}" == "$"
-        Dictionary Should Contain Key    ${responseBody.json()}    ${chave}
+Verificar Status Code
+    [Arguments]    ${response}    ${expected_status}
+    Should Be Equal As Strings    ${response.status_code}    ${expected_status}    msg=Status code diferente do esperado.
+
+Verificar Chave no JSON
+    [Arguments]    ${response}    ${json_path}=${EMPTY}    ${chave}
+    ${json}=    To JSON    ${response.content}
+    IF    '${json_path}' == '' or '${json_path}' == '$'
+        Dictionary Should Contain Key    ${json}    ${chave}
     ELSE
-        Dictionary Should Contain Key    ${responseBody.json()${jsonPath}}    ${chave}
-    END    
+        ${sub_dict}=    Get From Dictionary    ${json}    ${json_path}
+        Dictionary Should Contain Key    ${sub_dict}    ${chave}
+    END
 
-email e senha são válidos
+Preparar Body Login
+    [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
     ${body}=    Create Dictionary    email=${email}    password=${password}
-    Set Global Variable    ${body}
+    [Return]    ${body}
 
-efetuar login
-    ${responseBody} =    POST    ${url}${urlLogin}    json=${body}    expected_status=anything
-    Set Global Variable    ${responseBody}
-    Log    Resposta: ${responseBody}
+Preparar Body Register
+    [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
+    ${body}=    Create Dictionary    email=${email}    password=${password}
+    [Return]    ${body}
 
-ausência de email e senha
-    ${body}=    Create Dictionary    email=    password=
-    Set Global Variable    ${body}
+Preparar Body Ausente
+    [Arguments]    ${fields}
+    ${body}=    Create Dictionary
+    :FOR    ${field}    IN    @{fields}
+    \    Set To Dictionary    ${body}    ${field}    ${EMPTY}
+    [Return]    ${body}
 
-verificar a mensagem de erro
-    [Arguments]    ${msgErro}
-    Dictionary Should Contain Item    ${responseBody.json()}    error    ${msgErro}
+Executar Login
+    [Arguments]    ${body}
+    ${response}=    POST    ${BASE_URL}${LOGIN_PATH}    json=${body}    expected_status=anything
+    [Return]    ${response}
 
-email válido mas ausência de senha
-    ${body}=    Create Dictionary    email=${email}    password=
-    Set Global Variable    ${body}
+Executar Cadastro
+    [Arguments]    ${body}
+    ${response}=    POST    ${BASE_URL}${REGISTER_PATH}    json=${body}    expected_status=anything
+    [Return]    ${response}
 
-ausência de email mas senha válida
-    ${body}=    Create Dictionary    email=    password=${password}
-    Set Global Variable    ${body}
+Verificar Mensagem de Erro
+    [Arguments]    ${response}    ${msg_erro}
+    ${json}=    To JSON    ${response.content}
+    Dictionary Should Contain Key    ${json}    error
+    ${error}=    Get From Dictionary    ${json}    error
+    Should Be Equal As Strings    ${error}    ${msg_erro}
 
-email inválido e uma senha válida
-    [Arguments]    ${emailInvalido}
-    ${body}=    Create Dictionary    email=${emailInvalido}    password=${password}
-    Set Global Variable    ${body}
+Buscar Usuários
+    [Arguments]    ${page}=1    ${per_page}=6
+    ${response}=    GET    ${BASE_URL}${USERS_PATH}?page=${page}&per_page=${per_page}    expected_status=anything
+    [Return]    ${response}
 
-email e senha válidos para cadastro
-    ${body}    Create Dictionary    email=${email}    password=${password}
-    Set Global Variable    ${body}
+Registrar E Buscar ID do Usuário
+    [Arguments]    ${email}=${DEFAULT_EMAIL}    ${password}=${DEFAULT_PASS}
+    ${body}=    Preparar Body Register    ${email}    ${password}
+    ${response}=    Executar Cadastro    ${body}
+    ${json}=    To JSON    ${response.content}
+    Dictionary Should Contain Key    ${json}    id
+    ${user_id}=    Get From Dictionary    ${json}    id
+    [Return]    ${user_id}
 
-efetuar cadastro
-    ${responseBody}    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
-    Set Global Variable    ${responseBody}
-    Log    Resposta: ${responseBody}
+Buscar Usuário Por ID
+    [Arguments]    ${user_id}
+    ${response}=    GET    ${BASE_URL}${USERS_PATH}/${user_id}    expected_status=anything
+    [Return]    ${response}
 
-ausência de email e senha para cadastro
-    ${body}=    Create Dictionary    email=    password=
-    Set Global Variable    ${body}
-
-email válido mas ausência de senha para cadastro
-    ${body}=    Create Dictionary    email=eve.holt@reqres.com    password=
-    Set Global Variable    ${body}
-
-ausência de email mas senha válida para cadastro
-    ${body}=    Create Dictionary    email=    password=teste123
-    Set Global Variable    ${body}
-
-verificar usuários cadastrados
-    [Arguments]    ${page}    ${per_page}
-    ${body}=    Create Dictionary    page=${page}    per_page=${per_page}
-    Set Global Variable    ${body}
-
-verificar id de um usuário
-    ${body}    Create Dictionary    email=${email}    password=${password}
-    ${responseBody}    POST    ${url}${urlRegister}    json=${body}    expected_status=anything
-    Set Global Variable    ${responseBody}
-    ${id}=    Set Variable    ${responseBody.json()['id']}
-    Set Global Variable    ${id}
-
-    ${body}    Create Dictionary    id=${id}
-    ${responseBody}=    Get    ${url}/users/${id}    json=${body}    expected_status=anything
-    Set Global Variable    ${responseBody}
-    ${name}=    Set Variable    ${responseBody.json()['data']['first_name']}
-    Set Global Variable    ${name}
-
-deletar um usuário
-    ${responseBody}=    DELETE    url=${url}/users/${id}
-    Set Global Variable    ${responseBody}
+Deletar Usuário Por ID
+    [Arguments]    ${user_id}
+    ${response}=    DELETE    ${BASE_URL}${USERS_PATH}/${user_id}    expected_status=anything
+    [Return]    ${response}

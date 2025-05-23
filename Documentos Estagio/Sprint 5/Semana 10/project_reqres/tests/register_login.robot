@@ -10,7 +10,7 @@ Cenário 01: Login Sucesso
     Given email e senha são válidos
     When efetuar login
     Then verificar o status code    200
-    And verificar que existe a chave    ${chave}
+    And verificar que existe a chave    $    token
 
 Cenário 02: Login Ausência de Campos Obrigatórios
     [Tags]    Login
@@ -53,7 +53,7 @@ Cenário 06: Registrar Usuário Sucesso
     And verificar que existe a chave    $    id
     And verificar que existe a chave    $    token
 
-Cenário 08: Registrar Ausência de Campos Obrigatório
+Cenário 08: Registrar Ausência de Campos Obrigatórios
     [Tags]    Register
     Given ausência de email e senha para cadastro
     When efetuar cadastro
@@ -61,7 +61,7 @@ Cenário 08: Registrar Ausência de Campos Obrigatório
     And verificar que existe a chave    $    error
     And verificar a mensagem de erro    Missing email or username
 
-Cenário 09: RegistrarCampo Senha Obrigatório
+Cenário 09: Registrar Campo Senha Obrigatório
     [Tags]    Register
     Given email válido mas ausência de senha para cadastro
     When efetuar cadastro
