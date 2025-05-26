@@ -1,4 +1,4 @@
-Projeto de Automação - API Restful Booker
+Projeto de Automação - API Restful Booker (https://restful-booker.herokuapp.com/)
 
 Este projeto contém a automação de testes para a API Restful Booker, desenvolvido utilizando Robot Framework no Visual Studio Code (VSCode). Durante o desenvolvimento, foram utilizadas as bibliotecas Collections, String e Requests para a construção dos testes.
 
