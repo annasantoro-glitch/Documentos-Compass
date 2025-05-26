@@ -19,3 +19,19 @@ Tecnologias Utilizadas:
 - Robot Framework
 - Requests Library
 - Visual Studio Code
+
+Como executar este projeto:
+
+1. Certifique-se de ter o Python instalado em sua máquina.
+2. Instale o Robot Framework e a biblioteca Requests com os seguintes comandos:
+   pip install robotframework
+   pip install robotframework-requests
+3. Clone este repositório em sua máquina.
+4. Navegue até o diretório raiz do projeto.
+5. Execute os testes utilizando o comando:
+   robot nome_do_arquivo.robot
+   (substitua "nome_do_arquivo.robot" pelo arquivo ou diretório que deseja executar).
+6. Para visualizar o relatório gerado, abra o arquivo "report.html" na raiz do projeto.
+
+Observação:
+Este projeto foi desenvolvido com foco em aprendizado e prática de automação de testes de APIs RESTful. Feedbacks são bem-vindos!
