@@ -38,15 +38,14 @@ https://github.com/seu-usuario/seu-repositorio.git
 2. Execute a calculdora via terminal:
    ```bash
    python calculdora.py
+   
+3. Execute os testes com pytest (Opcional):
+pytest tests/
 
-3. Execute os testes com pytest (Opcional)
+## Próximos passos sugeridos
+Implementação de interface gráfica (GUI) simples com Tkinter ou PySimpleGUI
 
-```pytest tests/
+Integração contínua com GitHub Actions para execução automática dos testes
 
-## Próximos passos sugeridos:
-
-- Implementação de interface gráfica (GUI) simples com Tkinter ou PySimpleGUI;
-- Integração contínua com GitHub Actions para execução automática dos testes.
-
-Licença
-Projeto de caráter educacional. Livre para estudos e adaptações. 
+## Licença
+Projeto de caráter educacional. Livre para estudos e adaptações.
