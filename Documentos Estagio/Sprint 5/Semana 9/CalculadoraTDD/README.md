@@ -27,13 +27,12 @@ Essa atividade instigou minha habilidade de revisão de código, validação ent
 - Pytest (para testes unitários)
 - VSCode 
 
-## Como Executar:
+## Como executar
 
 1. Clone o repositório:
-   ```bash 
-   git clone 
-https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio   
+   ```bash
+   git clone https://github.com/seu-usuario/seu-repositorio.git
+   cd seu-repositorio
 
 2. Execute a calculdora via terminal:
    ```bash
