@@ -40,8 +40,8 @@ https://github.com/seu-usuario/seu-repositorio.git
   python calculdora.py
 
 3. Execute os testes com pytest (Opcional)
-  ```bash 
-  pytest tests/
+
+```pytest tests/
 
 ## Próximos passos sugeridos:
 
