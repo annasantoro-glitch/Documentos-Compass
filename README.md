@@ -1,4 +1,4 @@
-# documentos
+# Repositório de Materiais de QA e Testes
 
 Este repositório reúne os principais arquivos e materiais produzidos durante meu estágio em Quality Assurance (QA) na Compass Uol, com foco em testes de software, automação e práticas de qualidade. Ele reflete minha trajetória de aprendizado, desde o entendimento de fundamentos teóricos até a aplicação prática em projetos reais, incluindo desafios técnicos, code reviews e uso de ferramentas essenciais para QA moderno.
 
