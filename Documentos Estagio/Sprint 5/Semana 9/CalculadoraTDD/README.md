@@ -36,8 +36,8 @@ https://github.com/seu-usuario/seu-repositorio.git
    cd seu-repositorio   
 
 2. Execute a calculdora via terminal:
-   ```bash 
-  python calculdora.py
+   ```bash
+   python calculdora.py
 
 3. Execute os testes com pytest (Opcional)
 
