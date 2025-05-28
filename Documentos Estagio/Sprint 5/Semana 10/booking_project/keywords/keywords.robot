@@ -70,17 +70,17 @@ Gerar Credenciais De Autenticacao
 Gerar Nomes Aleatorios Para Reserva
     ${primeiro_nome_aleatorio}=    Generate Random String    length=6    chars=[LETTERS]
     ${primeiro_nome_aleatorio}=    Convert To Title Case    ${primeiro_nome_aleatorio}
-    ${ultimo_nome_aleatorio}=    Generate Random String    length=7    chars=[LETTERS]
-    ${ultimo_nome_aleatorio}=    Convert To Title Case    ${ultimo_nome_aleatorio}
+    ${sobrenome_aleatorio}=    Generate Random String    length=7    chars=[LETTERS]
+    ${sobrenome_aleatorio}=    Convert To Title Case    ${sobrenome_aleatorio}
     Set Suite Variable    ${PRIMEIRO_NOME_TESTE}    ${primeiro_nome_aleatorio}
-    Set Suite Variable    ${ULTIMO_NOME_TESTE}    ${ultimo_nome_aleatorio}
+    Set Suite Variable    ${SOBRENOME_TESTE}    ${sobrenome_aleatorio}
 
 Criar Payload Para Nova Reserva
     [Arguments]    ${checkin_date}    ${checkout_date}    ${price}=150    ${deposit}=True    ${needs}=Sauna
     ${datas_reserva}=    Create Dictionary    checkin=${checkin_date}    checkout=${checkout_date}
     &{payload_completo}=    Create Dictionary
     ...    firstname=${PRIMEIRO_NOME_TESTE}
-    ...    lastname=${ULTIMO_NOME_TESTE}
+    ...    lastname=${SOBRENOME_TESTE}
     ...    totalprice=${price}
     ...    depositpaid=${deposit}
     ...    bookingdates=${datas_reserva}

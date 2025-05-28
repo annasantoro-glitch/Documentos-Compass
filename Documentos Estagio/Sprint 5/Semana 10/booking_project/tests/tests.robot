@@ -110,7 +110,7 @@ Cenario: Listar Todas As Reservas
 Cenario: Buscar Reserva Por Nome E Sobrenome
     [Tags]    GET    Filtro
     Criar Nova Reserva Completa    2025-06-01    2025-06-05
-    ${params}=    Create Dictionary    firstname=${PRIMEIRO_NOME_TESTE}    lastname=${ULTIMO_NOME_TESTE}
+    ${params}=    Create Dictionary    firstname=${PRIMEIRO_NOME_TESTE}    lastname=${SOBRENOME_TESTE}
     ${resp_filtro}=    Realizar GET Request    /booking    ${params}
     Validar Codigo De Resposta    ${resp_filtro}    200
     Should Not Be Empty    ${resp_filtro.json()}
