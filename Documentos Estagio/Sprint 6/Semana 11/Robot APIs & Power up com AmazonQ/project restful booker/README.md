@@ -89,8 +89,8 @@ robot -d results tests/booking_crud_tests.robot
 robot -d results tests/performance_tests.robot
 ```
 
-### Execução Paralela (não suportada - para referência)
-## Exemplo de comando para execução paralela com Pabot (não suportado neste projeto)
+### Execução Paralela (não suportado neste projeto - para referência)
+#### Exemplo de comando para execução paralela com Pabot
 
 Requer instalação do Pabot:
 ```bash
