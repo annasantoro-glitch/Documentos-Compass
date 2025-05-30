@@ -28,8 +28,9 @@ Abaixo, um resumo da evolução das atividades por Sprint:
 - Git, GitHub, Python, Pytest e Automação de APIs com Robot Framework.  
 - Atividades: Criação de uma Calculadora em Python com TDD, Automação de Testes na API Restful Booker com Robot Framework, Relatório de Code Review.
 
-**Sprint 6**  
-- [Em andamento]
+**Sprint 6**   
+- AWS (Amazon EC2, Q Power Up), Robot Framework para APIs e Cloud Computing.  
+- Atividades: Evolução dos testes na Restful Booker + Relatório de Execução, Implementação e Relatório da API ServeRest em uma instância EC2, Challenge 2 [Em Andamento].
 
 ## Sobre os Arquivos
 
@@ -42,6 +43,7 @@ Neste repositório, você encontrará:
 - **Relatórios de Bugs**: registros estruturados de defeitos encontrados durante as atividades.
 - **Automação de Testes com Robot Framework**: projetos aplicados a APIs RESTful, como Restful Booker.
 - **Code Reviews**: análises críticas de projetos de colegas, aplicando boas práticas de QA.
+- **Cloud + QA**: Relatórios e evidências de execução de testes automatizados em ambientes AWS EC2.
 - **Outros Materiais Complementares**: slides, esquemas e anotações que apoiaram o desenvolvimento das atividades.
 
 Este repositório não é apenas uma coleção de arquivos: é um registro vivo da minha evolução como QA em formação, documentando erros, acertos, revisões e melhorias ao longo de cada Sprint. Ele serve como base de aprendizado para novos desafios e como um espaço para reflexão e compartilhamento de conhecimento.
