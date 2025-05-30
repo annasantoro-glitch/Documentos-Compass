@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-29T20:33:42.336919" rpa="false" schemaversion="5">
+<suite id="s1" name="Booking Filter Tests" source="C:\Users\abiol\OneDrive\CompassDocs\Sprint 6\Semana 11\Robot APIs &amp; Power up com AmazonQ\project restful booker\tests\booking_filter_tests.robot">
+<kw name="Setup Global Do Ambiente" type="SETUP">
+<kw name="Carregar Dados Do Arquivo JSON" owner="common_keywords">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-05-29T20:33:45.297489" level="INFO">${json_data} = {'api_base_url': 'https://restful-booker.herokuapp.com', 'auth_credentials': {'username': 'admin', 'password': 'password123'}}</msg>
+<var>${json_data}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.295347" elapsed="0.002280"/>
+</kw>
+<return>
+<value>${json_data}</value>
+<status status="PASS" start="2025-05-29T20:33:45.297883" elapsed="0.000144"/>
+</return>
+<msg time="2025-05-29T20:33:45.298446" level="INFO">${data} = {'api_base_url': 'https://restful-booker.herokuapp.com', 'auth_credentials': {'username': 'admin', 'password': 'password123'}}</msg>
+<var>${data}</var>
+<arg>config/data.json</arg>
+<status status="PASS" start="2025-05-29T20:33:45.278816" elapsed="0.019734"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:33:45.314178" level="INFO">${GLOBAL_API_URL} = https://restful-booker.herokuapp.com</msg>
+<arg>${GLOBAL_API_URL}</arg>
+<arg>${data}[api_base_url]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.300276" elapsed="0.014079"/>
+</kw>
+<kw name="Inicializar Sessao HTTP" owner="common_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:45.316073" level="INFO">Creating Session using : alias=booking_api_session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>${alias}</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-29T20:33:45.315675" elapsed="0.000994"/>
+</kw>
+<arg>${GLOBAL_API_URL}</arg>
+<status status="PASS" start="2025-05-29T20:33:45.314853" elapsed="0.002036"/>
+</kw>
+<kw name="Gerar Nomes Aleatorios Para Reserva" owner="common_keywords">
+<kw name="Generate Random String" owner="String">
+<msg time="2025-05-29T20:33:45.325904" level="INFO">${primeiro_nome_aleatorio} = EoYOQK</msg>
+<var>${primeiro_nome_aleatorio}</var>
+<arg>length=6</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.318530" elapsed="0.007502"/>
+</kw>
+<kw name="Convert To Title Case" owner="String">
+<msg time="2025-05-29T20:33:45.327698" level="INFO">${primeiro_nome_aleatorio} = EoYOQK</msg>
+<var>${primeiro_nome_aleatorio}</var>
+<arg>${primeiro_nome_aleatorio}</arg>
+<doc>Converts string to title case.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.326789" elapsed="0.001016"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-05-29T20:33:45.330367" level="INFO">${sobrenome_aleatorio} = oWNgKwk</msg>
+<var>${sobrenome_aleatorio}</var>
+<arg>length=7</arg>
+<arg>chars=[LETTERS]</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.328210" elapsed="0.002276"/>
+</kw>
+<kw name="Convert To Title Case" owner="String">
+<msg time="2025-05-29T20:33:45.331566" level="INFO">${sobrenome_aleatorio} = oWNgKwk</msg>
+<var>${sobrenome_aleatorio}</var>
+<arg>${sobrenome_aleatorio}</arg>
+<doc>Converts string to title case.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.330964" elapsed="0.000682"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:33:45.332618" level="INFO">${PRIMEIRO_NOME_TESTE} = EoYOQK</msg>
+<arg>${PRIMEIRO_NOME_TESTE}</arg>
+<arg>${primeiro_nome_aleatorio}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.332002" elapsed="0.000732"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:33:45.333656" level="INFO">${SOBRENOME_TESTE} = oWNgKwk</msg>
+<arg>${SOBRENOME_TESTE}</arg>
+<arg>${sobrenome_aleatorio}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.333062" elapsed="0.000708"/>
+</kw>
+<status status="PASS" start="2025-05-29T20:33:45.317346" elapsed="0.016607"/>
+</kw>
+<status status="PASS" start="2025-05-29T20:33:45.277790" elapsed="0.056298"/>
+</kw>
+<test id="s1-t1" name="Cenario: Listar Todas As Reservas" line="22">
+<kw name="Listar Todas As Reservas" owner="booking_keywords">
+<kw name="Realizar GET Request" owner="common_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:47.122269" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-05-29T20:33:47.123094" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Content-Length': '19036', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:33:46 GMT', 'Etag': 'W/"4a5c-Y+kCZzg/xNKYrqeH/Prv77bN1mw"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=u9QpUxJDgep8nx%2BEzVkrjyl8jk%2Fh%2BwJxfcJvw85tOwM%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561626"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=u9QpUxJDgep8nx%2BEzVkrjyl8jk%2Fh%2BwJxfcJvw85tOwM%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561626"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body=[{"bookingid":1002},{"bookingid":237},{"bookingid":1434},{"bookingid":888},{"bookingid":779},{"bookingid":991},{"bookingid":1063},{"bookingid":1193},{"bookingid":726},{"bookingid":169},{"bookingid":1219},{"bookingid":1377},{"bookingid":25},{"bookingid":264},{"bookingid":86},{"bookingid":887},{"bookingid":199},{"bookingid":564},{"bookingid":1160},{"bookingid":1340},{"bookingid":471},{"bookingid":97},{"bookingid":1137},{"bookingid":1435},{"bookingid":365},{"bookingid":1104},{"bookingid":769},{"bookingid":538},{"bookingid":1317},{"bookingid":1199},{"bookingid":1438},{"bookingid":615},{"bookingid":1215},{"bookingid":1445},{"bookingid":1047},{"bookingid":56},{"bookingid":1356},{"bookingid":21},{"bookingid":784},{"bookingid":606},{"bookingid":424},{"bookingid":451},{"bookingid":1071},{"bookingid":1036},{"bookingid":1076},{"bookingid":1332},{"bookingid":1442},{"bookingid":1014},{"bookingid":1368},{"bookingid":1038},{"bookingid":806},{"bookingid":399},{"bookingid":1086},{"bookingid":141},{"bookingid":455},{"bookingid":571},{"bookingid":293},{"bookingid":1125},{"bookingid":1064},{"bookingid":1101},{"bookingid":1503},{"bookingid":429},{"bookingid":979},{"bookingid":1172},{"bookingid":875},{"bookingid":1107},{"bookingid":798},{"bookingid":13},{"bookingid":1070},{"bookingid":759},{"bookingid":584},{"bookingid":843},{"bookingid":274},{"bookingid":805},{"bookingid":1270},{"bookingid":123},{"bookingid":599},{"bookingid":372},{"bookingid":458},{"bookingid":1354},{"bookingid":572},{"bookingid":1185},{"bookingid":1049},{"bookingid":473},{"bookingid":1139},{"bookingid":905},{"bookingid":496},{"bookingid":392},{"bookingid":1501},{"bookingid":1020},{"bookingid":344},{"bookingid":9},{"bookingid":249},{"bookingid":1326},{"bookingid":1420},{"bookingid":1313},{"bookingid":1514},{"bookingid":307},{"bookingid":53},{"bookingid":1406},{"bookingid":1366},{"bookingid":1035},{"bookingid":665},{"bookingid":716},{"bookingid":752},{"bookingid":973},{"bookingid":801},{"bookingid":512},{"bookingid":1497},{"bookingid":540},{"bookingid":480},{"bookingid":1258},{"bookingid":961},{"bookingid":193},{"bookingid":1392},{"bookingid":357},{"bookingid":508},{"bookingid":1361},{"bookingid":644},{"bookingid":1173},{"bookingid":1483},{"bookingid":735},{"bookingid":675},{"bookingid":1000},{"bookingid":598},{"bookingid":94},{"bookingid":205},{"bookingid":150},{"bookingid":666},{"bookingid":1177},{"bookingid":370},{"bookingid":682},{"bookingid":714},{"bookingid":138},{"bookingid":1201},{"bookingid":703},{"bookingid":570},{"bookingid":100},{"bookingid":975},{"bookingid":627},{"bookingid":382},{"bookingid":557},{"bookingid":1452},{"bookingid":597},{"bookingid":447},{"bookingid":387},{"bookingid":1402},{"bookingid":394},{"bookingid":1491},{"bookingid":786},{"bookingid":359},{"bookingid":287},{"bookingid":990},{"bookingid":1309},{"bookingid":1032},{"bookingid":1243},{"bookingid":238},{"bookingid":1102},{"bookingid":1218},{"bookingid":818},{"bookingid":654},{"bookingid":1473},{"bookingid":1474},{"bookingid":1289},{"bookingid":3},{"bookingid":27},{"bookingid":730},{"bookingid":940},{"bookingid":753},{"bookingid":1134},{"bookingid":626},{"bookingid":241},{"bookingid":1372},{"bookingid":588},{"bookingid":876},{"bookingid":156},{"bookingid":240},{"bookingid":1075},{"bookingid":63},{"bookingid":949},{"bookingid":1025},{"bookingid":696},{"bookingid":846},{"bookingid":1269},{"bookingid":803},{"bookingid":849},{"bookingid":1385},{"bookingid":104},{"bookingid":914},{"bookingid":267},{"bookingid":162},{"bookingid":1188},{"bookingid":403},{"bookingid":119},{"bookingid":477},{"bookingid":292},{"bookingid":1271},{"bookingid":271},{"bookingid":1282},{"bookingid":744},{"bookingid":352},{"bookingid":278},{"bookingid":206},{"bookingid":1111},{"bookingid":1039},{"bookingid":864},{"bookingid":464},{"bookingid":178},{"bookingid":1247},{"bookingid":322},{"bookingid":879},{"bookingid":985},{"bookingid":171},{"bookingid":151},{"bookingid":1157},{"bookingid":1261},{"bookingid":444},{"bookingid":280},{"bookingid":165},{"bookingid":927},{"bookingid":16},{"bookingid":1216},{"bookingid":500},{"bookingid":739},{"bookingid":807},{"bookingid":878},{"bookingid":1159},{"bookingid":1236},{"bookingid":903},{"bookingid":306},{"bookingid":168},{"bookingid":2},{"bookingid":650},{"bookingid":707},{"bookingid":481},{"bookingid":659},{"bookingid":1425},{"bookingid":1428},{"bookingid":375},{"bookingid":313},{"bookingid":283},{"bookingid":952},{"bookingid":998},{"bookingid":886},{"bookingid":1018},{"bookingid":1492},{"bookingid":149},{"bookingid":719},{"bookingid":28},{"bookingid":252},{"bookingid":107},{"bookingid":175},{"bookingid":147},{"bookingid":605},{"bookingid":348},{"bookingid":1006},{"bookingid":1069},{"bookingid":874},{"bookingid":202},{"bookingid":84},{"bookingid":1004},{"bookingid":17},{"bookingid":691},{"bookingid":1263},{"bookingid":722},{"bookingid":1126},{"bookingid":832},{"bookingid":1498},{"bookingid":454},{"bookingid":593},{"bookingid":7},{"bookingid":374},{"bookingid":723},{"bookingid":959},{"bookingid":951},{"bookingid":44},{"bookingid":590},{"bookingid":1375},{"bookingid":337},{"bookingid":194},{"bookingid":517},{"bookingid":729},{"bookingid":1117},{"bookingid":1495},{"bookingid":312},{"bookingid":1131},{"bookingid":775},{"bookingid":327},{"bookingid":494},{"bookingid":1085},{"bookingid":1335},{"bookingid":1197},{"bookingid":835},{"bookingid":780},{"bookingid":77},{"bookingid":1239},{"bookingid":1192},{"bookingid":338},{"bookingid":1509},{"bookingid":741},{"bookingid":742},{"bookingid":383},{"bookingid":712},{"bookingid":699},{"bookingid":935},{"bookingid":33},{"bookingid":218},{"bookingid":642},{"bookingid":1098},{"bookingid":230},{"bookingid":1476},{"bookingid":470},{"bookingid":263},{"bookingid":12},{"bookingid":797},{"bookingid":545},{"bookingid":561},{"bookingid":511},{"bookingid":1170},{"bookingid":1019},{"bookingid":1293},{"bookingid":430},{"bookingid":132},{"bookingid":527},{"bookingid":343},{"bookingid":649},{"bookingid":412},{"bookingid":335},{"bookingid":391},{"bookingid":1065},{"bookingid":776},{"bookingid":1156},{"bookingid":270},{"bookingid":1357},{"bookingid":624},{"bookingid":1376},{"bookingid":955},{"bookingid":866},{"bookingid":114},{"bookingid":863},{"bookingid":110},{"bookingid":14},{"bookingid":1176},{"bookingid":52},{"bookingid":514},{"bookingid":1027},{"bookingid":1058},{"bookingid":930},{"bookingid":1230},{"bookingid":310},{"bookingid":1384},{"bookingid":467},{"bookingid":130},{"bookingid":373},{"bookingid":48},{"bookingid":1350},{"bookingid":398},{"bookingid":289},{"bookingid":180},{"bookingid":334},{"bookingid":74},{"bookingid":220},{"bookingid":1344},{"bookingid":901},{"bookingid":1246},{"bookingid":127},{"bookingid":1437},{"bookingid":415},{"bookingid":928},{"bookingid":1493},{"bookingid":1164},{"bookingid":702},{"bookingid":848},{"bookingid":1426},{"bookingid":50},{"bookingid":867},{"bookingid":452},{"bookingid":1383},{"bookingid":367},{"bookingid":1431},{"bookingid":667},{"bookingid":792},{"bookingid":1291},{"bookingid":747},{"bookingid":113},{"bookingid":988},{"bookingid":1306},{"bookingid":1009},{"bookingid":970},{"bookingid":1073},{"bookingid":492},{"bookingid":1050},{"bookingid":549},{"bookingid":148},{"bookingid":1103},{"bookingid":1311},{"bookingid":457},{"bookingid":346},{"bookingid":223},{"bookingid":600},{"bookingid":939},{"bookingid":715},{"bookingid":964},{"bookingid":1411},{"bookingid":19},{"bookingid":628},{"bookingid":661},{"bookingid":449},{"bookingid":318},{"bookingid":1447},{"bookingid":1399},{"bookingid":506},{"bookingid":250},{"bookingid":1120},{"bookingid":416},{"bookingid":463},{"bookingid":72},{"bookingid":425},{"bookingid":906},{"bookingid":428},{"bookingid":400},{"bookingid":638},{"bookingid":727},{"bookingid":1398},{"bookingid":772},{"bookingid":647},{"bookingid":1267},{"bookingid":1323},{"bookingid":602},{"bookingid":143},{"bookingid":282},{"bookingid":1077},{"bookingid":520},{"bookingid":1310},{"bookingid":1138},{"bookingid":393},{"bookingid":594},{"bookingid":1379},{"bookingid":1245},{"bookingid":214},{"bookingid":1056},{"bookingid":920},{"bookingid":892},{"bookingid":1459},{"bookingid":756},{"bookingid":609},{"bookingid":10},{"bookingid":505},{"bookingid":485},{"bookingid":1296},{"bookingid":190},{"bookingid":963},{"bookingid":354},{"bookingid":91},{"bookingid":1017},{"bookingid":816},{"bookingid":243},{"bookingid":845},{"bookingid":69},{"bookingid":791},{"bookingid":438},{"bookingid":608},{"bookingid":135},{"bookingid":766},{"bookingid":118},{"bookingid":648},{"bookingid":1325},{"bookingid":1469},{"bookingid":568},{"bookingid":29},{"bookingid":57},{"bookingid":131},{"bookingid":861},{"bookingid":587},{"bookingid":873},{"bookingid":913},{"bookingid":1123},{"bookingid":1353},{"bookingid":437},{"bookingid":1186},{"bookingid":1191},{"bookingid":771},{"bookingid":1149},{"bookingid":1150},{"bookingid":1132},{"bookingid":1155},{"bookingid":986},{"bookingid":750},{"bookingid":124},{"bookingid":1242},{"bookingid":1328},{"bookingid":5},{"bookingid":236},{"bookingid":1118},{"bookingid":580},{"bookingid":533},{"bookingid":1418},{"bookingid":831},{"bookingid":108},{"bookingid":574},{"bookingid":681},{"bookingid":1288},{"bookingid":102},{"bookingid":916},{"bookingid":1432},{"bookingid":81},{"bookingid":1099},{"bookingid":956},{"bookingid":1068},{"bookingid":1339},{"bookingid":1294},{"bookingid":299},{"bookingid":1345},{"bookingid":183},{"bookingid":1292},{"bookingid":553},{"bookingid":858},{"bookingid":256},{"bookingid":989},{"bookingid":820},{"bookingid":596},{"bookingid":258},{"bookingid":253},{"bookingid":680},{"bookingid":1220},{"bookingid":713},{"bookingid":954},{"bookingid":1151},{"bookingid":439},{"bookingid":922},{"bookingid":1090},{"bookingid":1295},{"bookingid":1},{"bookingid":1444},{"bookingid":64},{"bookingid":1462},{"bookingid":1238},{"bookingid":543},{"bookingid":78},{"bookingid":814},{"bookingid":1303},{"bookingid":855},{"bookingid":1305},{"bookingid":187},{"bookingid":8},{"bookingid":1489},{"bookingid":46},{"bookingid":1347}... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg time="2025-05-29T20:33:47.125093" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:33:47.126411" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:33:45.407271" elapsed="1.719336"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:33:47.127066" elapsed="0.000353"/>
+</return>
+<msg time="2025-05-29T20:33:47.128276" level="INFO">${resp_list} = &lt;Response [200]&gt;</msg>
+<var>${resp_list}</var>
+<arg>/booking</arg>
+<status status="PASS" start="2025-05-29T20:33:45.406502" elapsed="1.721940"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.134647" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.131122" elapsed="0.003975"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.135889" elapsed="0.013107"/>
+</kw>
+<arg>${resp_list}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:47.129362" elapsed="0.020259"/>
+</kw>
+<return>
+<value>${resp_list}</value>
+<status status="PASS" start="2025-05-29T20:33:47.149969" elapsed="0.000222"/>
+</return>
+<msg time="2025-05-29T20:33:47.151277" level="INFO">${resp_list} = &lt;Response [200]&gt;</msg>
+<var>${resp_list}</var>
+<status status="PASS" start="2025-05-29T20:33:45.405728" elapsed="1.745735"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.164363" level="INFO">Length is 1043.</msg>
+<arg>${resp_list.json()}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.161292" elapsed="0.003353"/>
+</kw>
+<tag>GET</tag>
+<status status="PASS" start="2025-05-29T20:33:45.334281" elapsed="1.832500"/>
+</test>
+<test id="s1-t2" name="Cenario: Buscar Reserva Por Nome E Sobrenome" line="27">
+<kw name="Criar Nova Reserva E Retornar ID" owner="booking_keywords">
+<kw name="Criar Payload Para Nova Reserva" owner="booking_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.173910" level="INFO">${datas_reserva} = {'checkin': '2025-06-01', 'checkout': '2025-06-05'}</msg>
+<var>${datas_reserva}</var>
+<arg>checkin=${checkin_date}</arg>
+<arg>checkout=${checkout_date}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.173112" elapsed="0.000875"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.175343" level="INFO">&amp;{payload_completo} = { firstname=EoYOQK | lastname=oWNgKwk | totalprice=150 | depositpaid=True | bookingdates={'checkin': '2025-06-01', 'checkout': '2025-06-05'} | additionalneeds=Sauna }</msg>
+<var>&amp;{payload_completo}</var>
+<arg>firstname=${firstname}</arg>
+<arg>lastname=${lastname}</arg>
+<arg>totalprice=${price}</arg>
+<arg>depositpaid=${deposit}</arg>
+<arg>bookingdates=${datas_reserva}</arg>
+<arg>additionalneeds=${needs}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.174415" elapsed="0.000990"/>
+</kw>
+<return>
+<value>${payload_completo}</value>
+<status status="PASS" start="2025-05-29T20:33:47.175563" elapsed="0.000173"/>
+</return>
+<msg time="2025-05-29T20:33:47.176048" level="INFO">${payload} = {'firstname': 'EoYOQK', 'lastname': 'oWNgKwk', 'totalprice': '150', 'depositpaid': True, 'bookingdates': {'checkin': '2025-06-01', 'checkout': '2025-06-05'}, 'additionalneeds': 'Sauna'}</msg>
+<var>${payload}</var>
+<arg>${firstname}</arg>
+<arg>${lastname}</arg>
+<arg>${checkin_date}</arg>
+<arg>${checkout_date}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.170659" elapsed="0.005442"/>
+</kw>
+<kw name="Realizar POST Request" owner="common_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:47.360459" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '185', 'Content-Type': 'application/json'} 
+ body=b'{"firstname": "EoYOQK", "lastname": "oWNgKwk", "totalprice": "150", "depositpaid": true, "bookingdates": {"checkin": "2025-06-01", "checkout": "2025-06-05"}, "additionalneeds": "Sauna"}' 
+ </msg>
+<msg time="2025-05-29T20:33:47.360643" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Content-Length': '198', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:33:47 GMT', 'Etag': 'W/"c6-CT3NrHtLUXgUHnhf+O/C/6ejBIg"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561627"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561627"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"bookingid":1518,"booking":{"firstname":"EoYOQK","lastname":"oWNgKwk","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2025-06-01","checkout":"2025-06-05"},"additionalneeds":"Sauna"}} 
+ </msg>
+<msg time="2025-05-29T20:33:47.360841" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:33:47.361470" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.184859" elapsed="0.176669"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:33:47.361699" elapsed="0.000097"/>
+</return>
+<msg time="2025-05-29T20:33:47.362066" level="INFO">${resp_post} = &lt;Response [200]&gt;</msg>
+<var>${resp_post}</var>
+<arg>/booking</arg>
+<arg>${payload}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.176554" elapsed="0.185564"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.363839" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.363062" elapsed="0.000883"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.364132" elapsed="0.000910"/>
+</kw>
+<arg>${resp_post}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:47.362460" elapsed="0.002830"/>
+</kw>
+<kw name="Extrair Valor Do JSON" owner="common_keywords">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.366839" elapsed="0.000330"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-29T20:33:47.367697" level="INFO">${valor_extraido} = 1518</msg>
+<var>${valor_extraido}</var>
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.367392" elapsed="0.000354"/>
+</kw>
+<return>
+<value>${valor_extraido}</value>
+<status status="PASS" start="2025-05-29T20:33:47.367844" elapsed="0.000066"/>
+</return>
+<msg time="2025-05-29T20:33:47.368122" level="INFO">${id_gerado} = 1518</msg>
+<var>${id_gerado}</var>
+<arg>${resp_post.json()}</arg>
+<arg>bookingid</arg>
+<status status="PASS" start="2025-05-29T20:33:47.365595" elapsed="0.002571"/>
+</kw>
+<return>
+<value>${id_gerado}</value>
+<status status="PASS" start="2025-05-29T20:33:47.368252" elapsed="0.000043"/>
+</return>
+<msg time="2025-05-29T20:33:47.368501" level="INFO">${id_reserva_para_filtro} = 1518</msg>
+<var>${id_reserva_para_filtro}</var>
+<arg>${PRIMEIRO_NOME_TESTE}</arg>
+<arg>${SOBRENOME_TESTE}</arg>
+<arg>2025-06-01</arg>
+<arg>2025-06-05</arg>
+<status status="PASS" start="2025-05-29T20:33:47.169691" elapsed="0.198858"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.369573" level="INFO">${params} = {'firstname': 'EoYOQK', 'lastname': 'oWNgKwk'}</msg>
+<var>${params}</var>
+<arg>firstname=${PRIMEIRO_NOME_TESTE}</arg>
+<arg>lastname=${SOBRENOME_TESTE}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.369107" elapsed="0.000514"/>
+</kw>
+<kw name="Buscar Reservas Por Filtro" owner="booking_keywords">
+<kw name="Realizar GET Request" owner="common_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:47.540399" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking?firstname=EoYOQK&amp;lastname=oWNgKwk 
+ path_url=/booking?firstname=EoYOQK&amp;lastname=oWNgKwk 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-05-29T20:33:47.540864" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking?firstname=EoYOQK&amp;lastname=oWNgKwk 
+ status=200, reason=OK 
+ headers={'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:33:47 GMT', 'Etag': 'W/"14-0LDOv6sFsjizo/PFjkV+G3CgRSA"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561627"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561627"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body=[{"bookingid":1518}] 
+ </msg>
+<msg time="2025-05-29T20:33:47.541244" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:33:47.542637" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.371203" elapsed="0.171628"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:33:47.543247" elapsed="0.000219"/>
+</return>
+<msg time="2025-05-29T20:33:47.544308" level="INFO">${resp_filtro} = &lt;Response [200]&gt;</msg>
+<var>${resp_filtro}</var>
+<arg>/booking</arg>
+<arg>params=${params}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.370699" elapsed="0.173783"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.549747" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.547250" elapsed="0.002838"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.550945" elapsed="0.002693"/>
+</kw>
+<arg>${resp_filtro}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:47.545382" elapsed="0.008684"/>
+</kw>
+<return>
+<value>${resp_filtro}</value>
+<status status="PASS" start="2025-05-29T20:33:47.554364" elapsed="0.000191"/>
+</return>
+<msg time="2025-05-29T20:33:47.555404" level="INFO">${resp_filtro} = &lt;Response [200]&gt;</msg>
+<var>${resp_filtro}</var>
+<arg>&amp;{params}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.370132" elapsed="0.185444"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.559702" level="INFO">Length is 1.</msg>
+<arg>${resp_filtro.json()}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.556646" elapsed="0.003397"/>
+</kw>
+<tag>Filtro</tag>
+<tag>GET</tag>
+<status status="PASS" start="2025-05-29T20:33:47.168495" elapsed="0.397476"/>
+</test>
+<test id="s1-t3" name="Cenario: Buscar Reserva Por Intervalo De Datas" line="36">
+<kw name="Criar Nova Reserva E Retornar ID" owner="booking_keywords">
+<kw name="Criar Payload Para Nova Reserva" owner="booking_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.613732" level="INFO">${datas_reserva} = {'checkin': '2025-07-01', 'checkout': '2025-07-10'}</msg>
+<var>${datas_reserva}</var>
+<arg>checkin=${checkin_date}</arg>
+<arg>checkout=${checkout_date}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.613156" elapsed="0.000654"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.614862" level="INFO">&amp;{payload_completo} = { firstname=EoYOQK | lastname=oWNgKwk | totalprice=150 | depositpaid=True | bookingdates={'checkin': '2025-07-01', 'checkout': '2025-07-10'} | additionalneeds=Sauna }</msg>
+<var>&amp;{payload_completo}</var>
+<arg>firstname=${firstname}</arg>
+<arg>lastname=${lastname}</arg>
+<arg>totalprice=${price}</arg>
+<arg>depositpaid=${deposit}</arg>
+<arg>bookingdates=${datas_reserva}</arg>
+<arg>additionalneeds=${needs}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.614053" elapsed="0.000864"/>
+</kw>
+<return>
+<value>${payload_completo}</value>
+<status status="PASS" start="2025-05-29T20:33:47.615241" elapsed="0.000119"/>
+</return>
+<msg time="2025-05-29T20:33:47.615724" level="INFO">${payload} = {'firstname': 'EoYOQK', 'lastname': 'oWNgKwk', 'totalprice': '150', 'depositpaid': True, 'bookingdates': {'checkin': '2025-07-01', 'checkout': '2025-07-10'}, 'additionalneeds': 'Sauna'}</msg>
+<var>${payload}</var>
+<arg>${firstname}</arg>
+<arg>${lastname}</arg>
+<arg>${checkin_date}</arg>
+<arg>${checkout_date}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.610482" elapsed="0.006377"/>
+</kw>
+<kw name="Realizar POST Request" owner="common_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:47.792665" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/booking 
+ path_url=/booking 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '185', 'Content-Type': 'application/json'} 
+ body=b'{"firstname": "EoYOQK", "lastname": "oWNgKwk", "totalprice": "150", "depositpaid": true, "bookingdates": {"checkin": "2025-07-01", "checkout": "2025-07-10"}, "additionalneeds": "Sauna"}' 
+ </msg>
+<msg time="2025-05-29T20:33:47.792887" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/booking 
+ status=200, reason=OK 
+ headers={'Content-Length': '198', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:33:47 GMT', 'Etag': 'W/"c6-X3JDRPb91TCmRBCi0+SKa5KOKiU"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561627"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=bq2DcKWSPTctDIy5RhDdtPX1%2FkW6dssMVfirlvGOCgc%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561627"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"bookingid":1521,"booking":{"firstname":"EoYOQK","lastname":"oWNgKwk","totalprice":150,"depositpaid":true,"bookingdates":{"checkin":"2025-07-01","checkout":"2025-07-10"},"additionalneeds":"Sauna"}} 
+ </msg>
+<msg time="2025-05-29T20:33:47.793204" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:33:47.949359" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.620384" elapsed="0.329104"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:33:47.949718" elapsed="0.000124"/>
+</return>
+<msg time="2025-05-29T20:33:47.950240" level="INFO">${resp_post} = &lt;Response [200]&gt;</msg>
+<var>${resp_post}</var>
+<arg>/booking</arg>
+<arg>${payload}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.619364" elapsed="0.330950"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.954055" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.952073" elapsed="0.002189"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.954726" elapsed="0.002755"/>
+</kw>
+<arg>${resp_post}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:47.950906" elapsed="0.006850"/>
+</kw>
+<kw name="Extrair Valor Do JSON" owner="common_keywords">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.960251" elapsed="0.000469"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-29T20:33:47.962877" level="INFO">${valor_extraido} = 1521</msg>
+<var>${valor_extraido}</var>
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.961431" elapsed="0.001537"/>
+</kw>
+<return>
+<value>${valor_extraido}</value>
+<status status="PASS" start="2025-05-29T20:33:47.963141" elapsed="0.000110"/>
+</return>
+<msg time="2025-05-29T20:33:47.963663" level="INFO">${id_gerado} = 1521</msg>
+<var>${id_gerado}</var>
+<arg>${resp_post.json()}</arg>
+<arg>bookingid</arg>
+<status status="PASS" start="2025-05-29T20:33:47.958289" elapsed="0.005441"/>
+</kw>
+<return>
+<value>${id_gerado}</value>
+<status status="PASS" start="2025-05-29T20:33:47.963859" elapsed="0.000068"/>
+</return>
+<msg time="2025-05-29T20:33:47.964333" level="INFO">${id_reserva_para_filtro} = 1521</msg>
+<var>${id_reserva_para_filtro}</var>
+<arg>${PRIMEIRO_NOME_TESTE}</arg>
+<arg>${SOBRENOME_TESTE}</arg>
+<arg>2025-07-01</arg>
+<arg>2025-07-10</arg>
+<status status="PASS" start="2025-05-29T20:33:47.605525" elapsed="0.358879"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:33:47.966762" level="INFO">${params} = {'checkin': '2025-07-01', 'checkout': '2025-07-10'}</msg>
+<var>${params}</var>
+<arg>checkin=2025-07-01</arg>
+<arg>checkout=2025-07-10</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.966156" elapsed="0.000682"/>
+</kw>
+<kw name="Buscar Reservas Por Filtro" owner="booking_keywords">
+<kw name="Realizar GET Request" owner="common_keywords">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:48.128929" level="INFO">GET Request : url=https://restful-booker.herokuapp.com/booking?checkin=2025-07-01&amp;checkout=2025-07-10 
+ path_url=/booking?checkin=2025-07-01&amp;checkout=2025-07-10 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-05-29T20:33:48.129167" level="INFO">GET Response : url=https://restful-booker.herokuapp.com/booking?checkin=2025-07-01&amp;checkout=2025-07-10 
+ status=200, reason=OK 
+ headers={'Content-Length': '2', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:33:48 GMT', 'Etag': 'W/"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=gmDfkcZ5JjW89SGOKybGxxgOMwZnxEBqGuf2MfxPpF0%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561628"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=gmDfkcZ5JjW89SGOKybGxxgOMwZnxEBqGuf2MfxPpF0%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561628"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body=[] 
+ </msg>
+<msg time="2025-05-29T20:33:48.129358" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:33:48.187130" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:33:47.969671" elapsed="0.217590"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:33:48.187664" elapsed="0.000128"/>
+</return>
+<msg time="2025-05-29T20:33:48.188221" level="INFO">${resp_filtro} = &lt;Response [200]&gt;</msg>
+<var>${resp_filtro}</var>
+<arg>/booking</arg>
+<arg>params=${params}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.968869" elapsed="0.219426"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:48.190779" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:48.189551" elapsed="0.001408"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:48.191342" elapsed="0.004610"/>
+</kw>
+<arg>${resp_filtro}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:48.188722" elapsed="0.007661"/>
+</kw>
+<return>
+<value>${resp_filtro}</value>
+<status status="PASS" start="2025-05-29T20:33:48.196545" elapsed="0.000124"/>
+</return>
+<msg time="2025-05-29T20:33:48.197117" level="INFO">${resp_filtro} = &lt;Response [200]&gt;</msg>
+<var>${resp_filtro}</var>
+<arg>&amp;{params}</arg>
+<status status="PASS" start="2025-05-29T20:33:47.967681" elapsed="0.229512"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:33:48.223671" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:33:48.217422" elapsed="0.006435"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:48.224261" elapsed="0.010426"/>
+</kw>
+<arg>${resp_filtro}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:33:48.216380" elapsed="0.018612"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${resp_filtro.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:33:48.238331" elapsed="0.001908"/>
+</kw>
+<tag>Filtro</tag>
+<tag>GET</tag>
+<status status="PASS" start="2025-05-29T20:33:47.600200" elapsed="0.640549"/>
+</test>
+<kw name="Encerrar Todas As Sessoes HTTP" owner="common_keywords" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2025-05-29T20:33:48.244360" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-05-29T20:33:48.244137" elapsed="0.000474"/>
+</kw>
+<status status="PASS" start="2025-05-29T20:33:48.243454" elapsed="0.005897"/>
+</kw>
+<doc>Suite de testes para operações de listagem e filtro da API Restful-booker.</doc>
+<status status="PASS" start="2025-05-29T20:33:42.343637" elapsed="5.905828"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="2" fail="0" skip="0">Filtro</stat>
+<stat pass="3" fail="0" skip="0">GET</stat>
+</tag>
+<suite>
+<stat name="Booking Filter Tests" id="s1" pass="3" fail="0" skip="0">Booking Filter Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

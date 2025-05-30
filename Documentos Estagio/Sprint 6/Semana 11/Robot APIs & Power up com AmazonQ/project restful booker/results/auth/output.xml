@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.3 on win32)" generated="2025-05-29T20:32:34.798836" rpa="false" schemaversion="5">
+<suite id="s1" name="Auth Tests" source="C:\Users\abiol\OneDrive\CompassDocs\Sprint 6\Semana 11\Robot APIs &amp; Power up com AmazonQ\project restful booker\tests\auth_tests.robot">
+<kw name="Setup Global Do Ambiente" type="SETUP">
+<kw name="Carregar Dados Do Arquivo JSON" owner="common_keywords">
+<kw name="Load Json From File" owner="JSONLibrary">
+<msg time="2025-05-29T20:32:41.657001" level="INFO">${json_data} = {'api_base_url': 'https://restful-booker.herokuapp.com', 'auth_credentials': {'username': 'admin', 'password': 'password123'}}</msg>
+<var>${json_data}</var>
+<arg>${file_path}</arg>
+<doc>Load JSON from file.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.587035" elapsed="0.070266"/>
+</kw>
+<return>
+<value>${json_data}</value>
+<status status="PASS" start="2025-05-29T20:32:41.658447" elapsed="0.000194"/>
+</return>
+<msg time="2025-05-29T20:32:41.659178" level="INFO">${data} = {'api_base_url': 'https://restful-booker.herokuapp.com', 'auth_credentials': {'username': 'admin', 'password': 'password123'}}</msg>
+<var>${data}</var>
+<arg>config/data.json</arg>
+<status status="PASS" start="2025-05-29T20:32:41.585730" elapsed="0.073529"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:32:41.660268" level="INFO">${GLOBAL_API_URL} = https://restful-booker.herokuapp.com</msg>
+<arg>${GLOBAL_API_URL}</arg>
+<arg>${data}[api_base_url]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.659653" elapsed="0.000738"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:32:41.662791" level="INFO">${GLOBAL_USERNAME} = admin</msg>
+<arg>${GLOBAL_USERNAME}</arg>
+<arg>${data}[auth_credentials][username]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.660796" elapsed="0.002138"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<msg time="2025-05-29T20:32:41.663773" level="INFO">${GLOBAL_PASSWORD} = password123</msg>
+<arg>${GLOBAL_PASSWORD}</arg>
+<arg>${data}[auth_credentials][password]</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.663288" elapsed="0.000595"/>
+</kw>
+<kw name="Inicializar Sessao HTTP" owner="common_keywords">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:32:41.665301" level="INFO">Creating Session using : alias=booking_api_session, url=https://restful-booker.herokuapp.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>${alias}</arg>
+<arg>${url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-05-29T20:32:41.664936" elapsed="0.001525"/>
+</kw>
+<arg>${GLOBAL_API_URL}</arg>
+<status status="PASS" start="2025-05-29T20:32:41.664219" elapsed="0.002433"/>
+</kw>
+<status status="PASS" start="2025-05-29T20:32:41.584236" elapsed="0.082563"/>
+</kw>
+<test id="s1-t1" name="Cenario: Autenticacao Com Credenciais Validas" line="23">
+<kw name="Realizar Autenticacao E Retornar Token" owner="auth_keywords">
+<kw name="Gerar Credenciais De Autenticacao" owner="auth_keywords">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-05-29T20:32:41.670674" level="INFO">${auth_body} = {'username': 'admin', 'password': 'password123'}</msg>
+<var>${auth_body}</var>
+<arg>username=${username}</arg>
+<arg>password=${password}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.669899" elapsed="0.000854"/>
+</kw>
+<return>
+<value>${auth_body}</value>
+<status status="PASS" start="2025-05-29T20:32:41.671141" elapsed="0.000119"/>
+</return>
+<msg time="2025-05-29T20:32:41.672688" level="INFO">${credenciais} = {'username': 'admin', 'password': 'password123'}</msg>
+<var>${credenciais}</var>
+<arg>${username}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2025-05-29T20:32:41.669173" elapsed="0.003599"/>
+</kw>
+<kw name="Realizar POST Request" owner="common_keywords">
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-05-29T20:32:42.647718" level="INFO">POST Request : url=https://restful-booker.herokuapp.com/auth 
+ path_url=/auth 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '48', 'Content-Type': 'application/json'} 
+ body=b'{"username": "admin", "password": "password123"}' 
+ </msg>
+<msg time="2025-05-29T20:32:42.648075" level="INFO">POST Response : url=https://restful-booker.herokuapp.com/auth 
+ status=200, reason=OK 
+ headers={'Content-Length': '27', 'Content-Type': 'application/json; charset=utf-8', 'Date': 'Thu, 29 May 2025 23:32:42 GMT', 'Etag': 'W/"1b-lojW1goAWXIAEITxDEGSpqwjaAQ"', 'Nel': '{"report_to":"heroku-nel","response_headers":["Via"],"max_age":3600,"success_fraction":0.01,"failure_fraction":0.1}', 'Report-To': '{"group":"heroku-nel","endpoints":[{"url":"https://nel.heroku.com/reports?s=tuA7u7gqrmGZntf7G%2Fq3IFVAbp%2FYuA%2FmlpnBXisMqlM%3D\\u0026sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add\\u0026ts=1748561562"}],"max_age":3600}', 'Reporting-Endpoints': 'heroku-nel="https://nel.heroku.com/reports?s=tuA7u7gqrmGZntf7G%2Fq3IFVAbp%2FYuA%2FmlpnBXisMqlM%3D&amp;sid=c46efe9b-d3d2-4a0c-8c76-bfafa16c5add&amp;ts=1748561562"', 'Server': 'Heroku', 'Via': '1.1 heroku-router', 'X-Powered-By': 'Express'} 
+ body={"token":"0e1c41a75aefd5e"} 
+ </msg>
+<msg time="2025-05-29T20:32:42.648386" level="INFO">C:\Users\abiol\AppData\Local\Programs\Python\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'restful-booker.herokuapp.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-05-29T20:32:42.668062" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>${SESSION_ALIAS}</arg>
+<arg>${endpoint}</arg>
+<arg>json=${payload}</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-05-29T20:32:41.674320" elapsed="0.993874"/>
+</kw>
+<return>
+<value>${resp}</value>
+<status status="PASS" start="2025-05-29T20:32:42.668602" elapsed="0.000136"/>
+</return>
+<msg time="2025-05-29T20:32:42.669209" level="INFO">${resp_auth} = &lt;Response [200]&gt;</msg>
+<var>${resp_auth}</var>
+<arg>/auth</arg>
+<arg>${credenciais}</arg>
+<status status="PASS" start="2025-05-29T20:32:41.673211" elapsed="0.996099"/>
+</kw>
+<kw name="Validar Codigo De Resposta" owner="common_keywords">
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-05-29T20:32:42.672160" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response_obj.status_code}</arg>
+<arg>${codigo_esperado}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.670724" elapsed="0.001788"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Status Code da Resposta: ${response_obj.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.673308" elapsed="0.023695"/>
+</kw>
+<arg>${resp_auth}</arg>
+<arg>200</arg>
+<status status="PASS" start="2025-05-29T20:32:42.669751" elapsed="0.027573"/>
+</kw>
+<kw name="Extrair Valor Do JSON" owner="common_keywords">
+<kw name="Dictionary Should Contain Key" owner="Collections">
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Fails if ``key`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.700079" elapsed="0.000707"/>
+</kw>
+<kw name="Get From Dictionary" owner="Collections">
+<msg time="2025-05-29T20:32:42.702278" level="INFO">${valor_extraido} = 0e1c41a75aefd5e</msg>
+<var>${valor_extraido}</var>
+<arg>${json_obj}</arg>
+<arg>${key}</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.701612" elapsed="0.000782"/>
+</kw>
+<return>
+<value>${valor_extraido}</value>
+<status status="PASS" start="2025-05-29T20:32:42.702550" elapsed="0.000096"/>
+</return>
+<msg time="2025-05-29T20:32:42.702961" level="INFO">${token} = 0e1c41a75aefd5e</msg>
+<var>${token}</var>
+<arg>${resp_auth.json()}</arg>
+<arg>token</arg>
+<status status="PASS" start="2025-05-29T20:32:42.697868" elapsed="0.005159"/>
+</kw>
+<return>
+<value>${token}</value>
+<status status="PASS" start="2025-05-29T20:32:42.703150" elapsed="0.000064"/>
+</return>
+<msg time="2025-05-29T20:32:42.703546" level="INFO">${auth_token} = 0e1c41a75aefd5e</msg>
+<var>${auth_token}</var>
+<arg>${GLOBAL_USERNAME}</arg>
+<arg>${GLOBAL_PASSWORD}</arg>
+<status status="PASS" start="2025-05-29T20:32:41.668312" elapsed="1.035309"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-05-29T20:32:42.709839" level="INFO">Length is 15.</msg>
+<arg>${auth_token}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.709382" elapsed="0.000591"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Token de autenticação obtido: ${auth_token}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-05-29T20:32:42.711762" elapsed="0.118270"/>
+</kw>
+<tag>AUTH</tag>
+<tag>Smoke</tag>
+<status status="PASS" start="2025-05-29T20:32:41.666978" elapsed="1.201275"/>
+</test>
+<kw name="Encerrar Todas As Sessoes HTTP" owner="common_keywords" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2025-05-29T20:32:43.137670" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2025-05-29T20:32:43.137445" elapsed="0.000473"/>
+</kw>
+<status status="PASS" start="2025-05-29T20:32:43.136785" elapsed="0.001630"/>
+</kw>
+<doc>Suite de testes para o endpoint de autenticação da API Restful-booker.</doc>
+<status status="PASS" start="2025-05-29T20:32:34.806193" elapsed="8.332320"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AUTH</stat>
+<stat pass="1" fail="0" skip="0">Smoke</stat>
+</tag>
+<suite>
+<stat name="Auth Tests" id="s1" pass="1" fail="0" skip="0">Auth Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
