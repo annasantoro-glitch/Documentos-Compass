@@ -1,4 +1,4 @@
-# Projeto de Automação de Testes - Restful Booker API
+# Projeto de Automação de Testes - Restful Booker API + Amazon Q
 
 Este projeto implementa testes automatizados para a API Restful Booker utilizando Robot Framework, com foco em boas práticas de automação, organização modular e validações robustas.
 
