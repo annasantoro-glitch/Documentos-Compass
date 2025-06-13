@@ -95,22 +95,22 @@ Ao longo do estágio, não apenas desenvolvi habilidades técnicas, mas também 
 - **Gerenciar o tempo de execução de tarefas** com autonomia, sem perder qualidade.
 - **Contribuir para a melhoria contínua**, sugerindo práticas e ferramentas durante os refinamentos.
 
-Squad Nexus 101 (Sprint 01 - Sprint 04)
-[Karen K. Herrmann](https://www.linkedin.com/in/karen-k-herrmann-433b34295/)
-[Wesley Cassio](https://www.linkedin.com/in/wesley-cassio-a7815b253/)
-[Douglas Cortes](https://www.linkedin.com/in/douglas-cortes-2b315b82/)
-[Maria Eduarda Martins](https://www.linkedin.com/in/maria-eduarda-martins-rodrigues-564335349/)
+### Squad Nexus 101 (Sprint 01 - Sprint 04)
+- [Karen K. Herrmann](https://www.linkedin.com/in/karen-k-herrmann-433b34295/)
+- [Wesley Cassio](https://www.linkedin.com/in/wesley-cassio-a7815b253/)
+- [Douglas Cortes](https://www.linkedin.com/in/douglas-cortes-2b315b82/)
+- [Maria Eduarda Martins](https://www.linkedin.com/in/maria-eduarda-martins-rodrigues-564335349/)
 
-Squad Gotham (Sprint 05 - Atualmente)
-[Ádony Lagares](https://www.linkedin.com/in/adony-lagares/)
-[Ana Carolina Rosa](https://www.linkedin.com/in/ana-carolina-correa-rosa/)
-[Marcos Paulo Freitas](https://www.linkedin.com/in/marcos-freitas/)
+### Squad Gotham (Sprint 05 - Atualmente)
+- [Ádony Lagares](https://www.linkedin.com/in/adony-lagares/)
+- [Ana Carolina Rosa](https://www.linkedin.com/in/ana-carolina-correa-rosa/)
+- [Marcos Paulo Freitas](https://www.linkedin.com/in/marcos-freitas/)
 
-Instrutores e Scrum Masters
-[Jacques de Jesus Figueiredo Schmitz Junior](https://www.linkedin.com/in/jacques-schmitz-junior/)
-[Amanda Cardoso de Almeida](https://www.linkedin.com/in/amanda-almeida/)
-[Carlos Leonardo Alves Novaes](https://www.linkedin.com/in/carlos-leonardo-alves-novaes/)
-[Pedro de Oliveira Paiva e Souza](https://www.linkedin.com/in/pedro-o/)
+### Instrutores e Scrum Masters
+- [Jacques de Jesus Figueiredo Schmitz Junior](https://www.linkedin.com/in/jacques-schmitz-junior/)
+- [Amanda Cardoso de Almeida](https://www.linkedin.com/in/amanda-almeida/)
+- [Carlos Leonardo Alves Novaes](https://www.linkedin.com/in/carlos-leonardo-alves-novaes/)
+- [Pedro de Oliveira Paiva e Souza](https://www.linkedin.com/in/pedro-o/)
 
 Essa vivência me mostrou que a qualidade de um software começa muito antes da automação — ela nasce da colaboração inteligente entre pessoas.
 
