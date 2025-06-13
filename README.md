@@ -6,7 +6,7 @@
 ![AWS](https://img.shields.io/badge/AWS_EC2-✓-orange)
 ![API](https://img.shields.io/badge/Testes%20de%20API-Postman-blueviolet)
 ![Cloud](https://img.shields.io/badge/Nuvem-AWS_EC2-lightgrey)
-> Esta documentação também está disponível em [English](./README.en.md). 
+> Esta documentação também está disponível em [English](./README-EN.md). 
 
 Este repositório reúne os principais materiais produzidos durante meu estágio em Quality Assurance (QA) na Compass UOL, com foco em testes de software, automação e práticas modernas de qualidade. Ele documenta minha evolução técnica sprint a sprint — desde a teoria até a aplicação prática — com registros de estudos, experimentos, análises críticas e reflexões pessoais.
 
