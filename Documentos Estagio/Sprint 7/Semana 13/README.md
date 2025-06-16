@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Estas atividades tiveram como objetivo **explorar e aplicar diferentes estratégias de mapeamento de elementos HTML**, tanto em equipe quanto de forma individual, com foco na automação de testes web. Através de cenários práticos, buscou-se compreender **qual a melhor forma de localizar elementos com precisão, estabilidade e manutenibilidade**, em páginas com diferentes estruturas e desafios.
+Estas atividades tiveram como objetivo explorar e aplicar diferentes estratégias de mapeamento de elementos HTML, tanto em equipe quanto de forma individual, com foco na automação de testes web. Através de cenários práticos, buscou-se compreender qual a melhor forma de localizar elementos com precisão, estabilidade e manutenibilidade, em páginas com diferentes estruturas e desafios.
 
 ---
 
@@ -70,15 +70,45 @@ Estas atividades tiveram como objetivo **explorar e aplicar diferentes estratég
 
 ---
 
-## Resultados e aprendizados
+## Atividades Complementares
+
+### 🛍️ Livelo
+
+- **Objetivo:** Mapear três elementos principais do topo da página: **botão do carrinho**, **botão de login** e **botão criar conta**.
+- **Destaques:**
+  - Todos os elementos possuíam `id` estáveis e/ou `aria-label`.
+  - Seletores diretos, robustos e semânticos foram priorizados.
+
+### 🍷 Divvino
+
+- **Objetivo:** Mapear componentes de navegação e e-commerce.
+- **Elementos mapeados:**
+  1. **Array de botões de categorias**
+  2. **Cards de produtos**
+  3. **Ícone de busca (lupa)**
+  4. **Botão “Ir para o carrinho”**
+- **Destaques:** Uso de classes semânticas e hierarquia CSS (`ul > li > a`, `div.product-card`, etc.).
+
+### 🔍 Google
+
+- **Objetivo:** Mapear componentes clássicos da interface de busca.
+- **Elementos mapeados:**
+  1. **Campo de busca**
+  2. **Botão “Pesquisa Google”**
+  3. **Array de links de resultados**
+- **Destaques:** Priorização de atributos como `id`, `name` e `aria-label`. Exemplo de resultado baseado em estrutura real da SERP (`h3 > a`).
+
+---
+
+## Resultados e Aprendizados
 
 ### Principais aprendizados:
 
 - Desenvolvimento de **visão crítica** para escolher a melhor estratégia de acordo com o contexto do DOM.
 - **XPath e seletores CSS** possuem forças complementares: XPath é poderoso em hierarquias complexas, e CSS é mais legível e direto.
 - O mapeamento reforçou a importância da **manutenibilidade dos testes**, especialmente em aplicações com UI dinâmica.
-- Na atividade em Squad, a troca entre membros trouxe novas ideias e validou boas práticas.
-- Na atividade individual, houve espaço para **experimentação com diferentes estruturas e refinamento das decisões técnicas**.
+- Nas atividades em Squad, a troca entre membros trouxe novas ideias e validou boas práticas.
+- Nas atividades individuais e complementares, houve espaço para **experimentação com diferentes estruturas e refinamento das decisões técnicas**.
 
 ---
 
