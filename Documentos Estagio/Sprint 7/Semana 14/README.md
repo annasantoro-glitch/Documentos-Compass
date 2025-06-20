@@ -32,7 +32,7 @@ Como parte das atividades práticas de automação, colaboramos em um projeto em
 > ⚠️ Como este projeto foi realizado de forma colaborativa, foi criado um repositório específico apenas para ele. Todas as implementações e detalhes técnicos estão documentados lá.
 
 🔗 **Repositório do Projeto de Automação Web (ServeRest):**
-\[Serverest Tests Web]\([https://github.com/CacauRosa/serverest-testes-web.](https://github.com/CacauRosa/serverest-testes-web.git)[git](https://github.com/CacauRosa/serverest-testes-web.git))
+[Serverest Tests Web](https://github.com/CacauRosa/serverest-testes-web.git)
 
 ---
 
@@ -45,7 +45,7 @@ Também realizamos a **análise crítica (code review)** do projeto de automaç�
 * Sugestões técnicas para aprimorar a automação e os relatórios gerados
 
 🔗 **Repositório Avaliado:**
-\[Serverest Robotframework Tests]\([https://github.com/ThaisNogueiraB/serverest-robotframework-tests.git](https://github.com/ThaisNogueiraB/serverest-robotframework-tests.git))
+[Serverest Robotframework Tests](https://github.com/ThaisNogueiraB/serverest-robotframework-tests.git)
 
 Essa troca entre squads reforça a importância da revisão de código como ferramenta de aprendizado, colaboração e padronização.
 
@@ -56,7 +56,7 @@ Essa troca entre squads reforça a importância da revisão de código como ferr
 Além de realizar a análise de outra squad, também recebemos um **code review construtivo da squad Cavaleiros da Qualidade**, que avaliou nosso projeto de automação com foco em clareza, padronização e organização das automações.
 
 🔗 **Link para o Code Review Recebido:**
-\[CODE\_REVIEW]\([https://github.com/Rodrigo-Matuz/robot\_framework\_serverest/blob/904690eb7953ceee967dd92da68bf34d17360a44/CODE\_REVIEW.md](https://github.com/Rodrigo-Matuz/robot_framework_serverest/blob/904690eb7953ceee967dd92da68bf34d17360a44/CODE_REVIEW.md))
+[CODE\_REVIEW](https://github.com/Rodrigo-Matuz/robot\_framework\_serverest/blob/904690eb7953ceee967dd92da68bf34d17360a44/CODE\_REVIEW.md)
 
 Esse feedback externo foi essencial para identificar pontos de melhoria e reforçar boas práticas na escrita de testes automatizados.
 
