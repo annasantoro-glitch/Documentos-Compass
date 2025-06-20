@@ -98,6 +98,9 @@ Estas atividades tiveram como objetivo explorar e aplicar diferentes estratégia
   3. **Array de links de resultados**
 - **Destaques:** Priorização de atributos como `id`, `name` e `aria-label`. Exemplo de resultado baseado em estrutura real da SERP (`h3 > a`).
 
+
+> Todas as atividades complementares se encontram em "mapping strategies - pratice".
+
 ---
 
 ## Resultados e Aprendizados
@@ -112,4 +115,5 @@ Estas atividades tiveram como objetivo explorar e aplicar diferentes estratégia
 
 ---
 
-> Esta atividade foi essencial para consolidar o domínio prático de mapeamento de elementos HTML, habilidade chave para automação de testes robusta e sustentável.
+> Esta atividade foi essencial para consolidar o domínio prático de mapeamento de elementos HTML, habilidade chave para automação de testes robusta e sustentável. 
+
