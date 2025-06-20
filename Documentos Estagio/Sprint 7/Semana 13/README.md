@@ -19,17 +19,17 @@ semana-13/
 │
 ├── automação robot + node js/ ← Em andamento
 │ ├── mark85-robot-express/ # Projeto com Robot Framework + Node.js
-│ └── relatório de execução/ # Relatório (em breve)
+│ └── relatório de execução/ # Relatório
 │
 ├── html elements mapping - theory/
-│ └── Qualidade e Robustez de Seletores em Testes Automatizados Web.md
+│ └── Qualidade e Robustez de Seletores em Testes Automatizados Web.pdf
 │
 └── mapping strategies - pratice/
-├── Mapeamento de Elementos - Demoblaze.md
-├── Mapeamento de Elementos - The Internet (Squad).md
-├── Mapeamento de Elementos HTML - Livelo.md
-├── Mapeamento de Elementos HTML - Divvino.md
-└── Mapeamento de Elementos HTML - Google.md
+├── Mapeamento de Elementos - Demoblaze.pdf
+├── Mapeamento de Elementos - The Internet (Squad).pdf
+├── Mapeamento de Elementos HTML - Livelo.pdf
+├── Mapeamento de Elementos HTML - Divvino.pdf
+└── Mapeamento de Elementos HTML - Google.pdf
 ```
 
 ---
