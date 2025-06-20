@@ -1,118 +1,117 @@
-# Atividades – Estratégias de Mapeamento de Elementos HTML
+# Atividades – Estratégias de Mapeamento de Elementos HTML e Automação Web
 
 ## Objetivo
 
-Estas atividades tiveram como objetivo explorar e aplicar diferentes estratégias de mapeamento de elementos HTML, tanto em equipe quanto de forma individual, com foco na automação de testes web. Através de cenários práticos, buscou-se compreender qual a melhor forma de localizar elementos com precisão, estabilidade e manutenibilidade, em páginas com diferentes estruturas e desafios.
+Este diretório reúne atividades práticas e teóricas da Semana 13, com foco em:
+
+- Estratégias de mapeamento de elementos HTML
+- Boas práticas de automação de testes (front-end e back-end)
+- Análise crítica e aplicação prática com Robot Framework + Node.js
+
+As atividades foram organizadas em três núcleos: prática com DOMs reais, fundamentação teórica e automação integrada com o projeto **ServeRest**.
 
 ---
 
-## Atividade em Squad
+## Estrutura do Diretório
 
-### Contexto
-
-- **Site analisado:** [Challenging DOM – The Internet](https://the-internet.herokuapp.com/challenging_dom)
-- **Cenário:** A página apresenta três botões com atributos dinâmicos e uma tabela com células estáticas. O desafio era mapear esses elementos com seletores confiáveis, apesar das variações constantes em atributos como `id` e `text`.
-
----
-
-### O que foi feito
-
-#### Estratégias estudadas:
-- Seletor por **classe (`class`)**
-- **XPath**
-- **Pseudo-classes CSS** (`nth-child`)
-- Avaliação de fragilidade em atributos dinâmicos
-
-#### Elementos mapeados:
-
-1. **Botão principal (`foo`)**
-2. **Botão de alerta (`bar`)**
-3. **Botão de sucesso (sem texto)**
-4. **Primeira célula da tabela**
-
-#### Observações importantes:
-- Classes fixas foram as mais confiáveis para botões com IDs dinâmicos.
-- Para elementos sem classe ou ID, **pseudo-classes como `nth-child`** se mostraram úteis, apesar de mais frágeis em mudanças estruturais.
+```
+semana-13/
+│
+├── automação robot + node js/ ← Em andamento
+│ ├── mark85-robot-express/ # Projeto com Robot Framework + Node.js
+│ └── relatório de execução/ # Relatório
+│
+├── html elements mapping - theory/
+│ └── Qualidade e Robustez de Seletores em Testes Automatizados Web.pdf
+│
+└── mapping strategies - pratice/
+├── Mapeamento de Elementos - Demoblaze.pdf
+├── Mapeamento de Elementos - The Internet (Squad).pdf
+├── Mapeamento de Elementos HTML - Livelo.pdf
+├── Mapeamento de Elementos HTML - Divvino.pdf
+└── Mapeamento de Elementos HTML - Google.pdf
+```
 
 ---
 
-## Atividade Individual
+## Automação Back + Front – ServeRest (robot + node.js)
 
-### Contexto
+### 📁 mark85-robot-express
 
-- **Site escolhido:** [Demoblaze](https://www.demoblaze.com)
-- **Objetivo:** Aplicar **8 estratégias distintas de mapeamento**, cada uma em um elemento diferente da interface.
+- Projeto de automação da aplicação [ServeRest](https://github.com/PauloGoncalvesBH/ServeRest)
+- Arquitetura baseada em boas práticas (POM, modularidade, logs)
+- Integração com Node.js para simular backend e fluxos via API
 
----
+### 📊 Relatório de Execução (em breve)
 
-### O que foi feito
-
-#### Estratégias utilizadas:
-- ID único
-- Atributo customizado (`onclick`)
-- Fallback com `id` em vez de `name`
-- Class name
-- CSS avançado (descendant)
-- Operadores de atributo (`^=`)
-- Pseudo-classe `:not`
-- XPath baseado em texto
-
-#### Elementos mapeados:
-
-1. **Modal de Login**
-2. **Botão “Log in” no modal**
-3. **Campo username**
-4. **Link “Log in” do menu**
-5. **Categoria “Phones”**
-6. **Campo de login (dinâmico)**
-7. **Campos de input visíveis**
-8. **Botão “Log in” (por texto)**
+- Métricas dos testes
+- Avaliação dos seletores utilizados
+- Robustez e cobertura dos testes implementados
 
 ---
 
-## Atividades Complementares
+## Mapeamentos Práticos (mapping strategies - pratice)
 
-### 🛍️ Livelo
+Conjunto de estudos aplicados para explorar estratégias de seleção como:
 
-- **Objetivo:** Mapear três elementos principais do topo da página: **botão do carrinho**, **botão de login** e **botão criar conta**.
-- **Destaques:**
-  - Todos os elementos possuíam `id` estáveis e/ou `aria-label`.
-  - Seletores diretos, robustos e semânticos foram priorizados.
+- `id`, `class`, `name`, `aria-label`
+- Operadores de atributo (`^=`, `$=`, `*=`), pseudo-classes (`:not`, `nth-child`)
+- CSS hierárquico vs. XPath
+- Atributos customizados (`onclick`, `data-*`)
 
-### 🍷 Divvino
+### ✳Atividades incluídas:
 
-- **Objetivo:** Mapear componentes de navegação e e-commerce.
-- **Elementos mapeados:**
-  1. **Array de botões de categorias**
-  2. **Cards de produtos**
-  3. **Ícone de busca (lupa)**
-  4. **Botão “Ir para o carrinho”**
-- **Destaques:** Uso de classes semânticas e hierarquia CSS (`ul > li > a`, `div.product-card`, etc.).
+#### 👥 Em Squad: [The Internet – Challenging DOM](https://the-internet.herokuapp.com/challenging_dom)
 
-### 🔍 Google
+- **Cenário:** Botões com atributos dinâmicos e tabela estática
+- **Aprendizados:** Confiabilidade de classes, uso de pseudo-classes, XPath vs CSS
 
-- **Objetivo:** Mapear componentes clássicos da interface de busca.
-- **Elementos mapeados:**
-  1. **Campo de busca**
-  2. **Botão “Pesquisa Google”**
-  3. **Array de links de resultados**
-- **Destaques:** Priorização de atributos como `id`, `name` e `aria-label`. Exemplo de resultado baseado em estrutura real da SERP (`h3 > a`).
+#### 👤 Individual: [Demoblaze](https://www.demoblaze.com)
+
+- **Desafio:** Aplicar 8 estratégias distintas em diferentes elementos
+- **Abrangência:** Do `id` ao XPath textual, cobrindo campos, botões e menus
+
+### Atividades Complementares
+
+#### 🛍️ Livelo
+
+- Mapeamento de botões principais da interface superior
+- Uso intensivo de `id`, `aria-label` e `data-testid`
+
+#### 🍷 Divvino
+
+- Foco em categorias, produtos, botão de carrinho e ícone de busca
+- Estratégias de array, seletores compostos e estrutura semântica
+
+#### 🔍 Google
+
+- Mapeamento da homepage e da página de resultados
+- Destaque para atributos como `name`, `id`, `value`, `aria-label`
 
 
 > Todas as atividades complementares se encontram em "extra exercises".
 
 ---
 
-## Resultados e Aprendizados
+## Fundamentação Teórica (html elements mapping - theory)
 
-### Principais aprendizados:
+### 📄 Qualidade e Robustez de Seletores em Testes Automatizados Web
 
-- Desenvolvimento de **visão crítica** para escolher a melhor estratégia de acordo com o contexto do DOM.
-- **XPath e seletores CSS** possuem forças complementares: XPath é poderoso em hierarquias complexas, e CSS é mais legível e direto.
-- O mapeamento reforçou a importância da **manutenibilidade dos testes**, especialmente em aplicações com UI dinâmica.
-- Nas atividades em Squad, a troca entre membros trouxe novas ideias e validou boas práticas.
-- Nas atividades individuais e complementares, houve espaço para **experimentação com diferentes estruturas e refinamento das decisões técnicas**.
+Documento de referência que resume:
+
+- Diferenças entre seletores frágeis e estáveis
+- Estratégias preferenciais para testes duradouros
+- Impactos de mudanças no front-end sobre scripts automatizados
 
 ---
 
-> Esta atividade foi essencial para consolidar o domínio prático de mapeamento de elementos HTML, habilidade chave para automação de testes robusta e sustentável. 
+## Resultados Gerais
+
+- **Consolidação do conhecimento sobre estratégias de mapeamento**
+- **Aplicação prática das estratégias em contextos reais**
+- **Integração entre teoria, prática e automação real**
+- **Contato com ferramentas de mercado (Robot, Node.js, Mark85)**
+
+---
+
+> Os conteúdos desta semana marcaram um passo importante no aprofundamento da base técnica para automação de testes front-end e back-end, na análise crítica de seletores e na construção de automações mais robustas e sustentáveis.
