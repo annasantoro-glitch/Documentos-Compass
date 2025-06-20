@@ -88,6 +88,9 @@ Conjunto de estudos aplicados para explorar estratégias de seleção como:
 - Mapeamento da homepage e da página de resultados
 - Destaque para atributos como `name`, `id`, `value`, `aria-label`
 
+
+> Todas as atividades complementares se encontram em "extra exercises".
+
 ---
 
 ## Fundamentação Teórica (html elements mapping - theory)
